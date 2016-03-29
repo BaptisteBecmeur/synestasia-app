@@ -39,8 +39,10 @@ gem 'active_record-acts_as'
 gem 'simple_form'
 # Prefixs CSS
 gem 'autoprefixer-rails'
-#OAuth
+# OAuth
 gem 'omniauth'
+# Facebook Oauth
+gem 'omniauth-facebook'
 
 
 group :development, :test do
