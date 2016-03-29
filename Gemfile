@@ -7,6 +7,11 @@ gem 'rails', '4.2.6'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma'
+# Environnement variables
+gem 'figaro'
+# Internalization
+gem 'rails-i18n', '~> 4.0.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -20,17 +25,57 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Bootstrap
+gem 'bootstrap-sass'
+# Fontawesome
+gem 'font-awesome-sass', '~> 4.5.0'
+
+# Bower : for using CSS / JS externals libraries (Bootstrap, DataTables, etc ...).
+# Use to replace gem of assets (bootstrap-sass, fontawesome, etc ...)
+# https://github.com/rharriso/bower-rails
+# gem "bower-rails", "~> 0.10.0"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Authentification
+gem 'devise'
+# Multiple table inheritance
+gem 'active_record-acts_as'
+# Sortable active record
+gem 'acts_as_list'
+# Forms
+gem 'simple_form'
+# Prefixs CSS
+gem 'autoprefixer-rails'
+# OAuth
+gem 'omniauth'
+# Facebook Oauth
+gem 'omniauth-facebook'
+# Google Auth
+gem 'omniauth-google-oauth2'
+# Images
+gem 'carrierwave'
+# Storage
+gem 'cloudinary'
+# Ruby library for Markdown processing
+gem 'redcarpet'
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Rails debug
+  gem 'pry-rails'
+  # Tests
+  gem 'rspec-rails', '~> 3.0'
+  gem 'spring-commands-rspec'
+
+  # Use the 'dotenv-rails' gem to replace the 'figaro' gem
+  # https://github.com/bkeepers/dotenv
+  # gem 'dotenv-rails'
 end
 
 group :development do
@@ -40,7 +85,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Styling errors
+  gem "better_errors"
+  gem "binding_of_caller"
+  # Quiet assets
+  gem 'quiet_assets'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :production do
+  # Heroku
+  gem 'rails_12factor'
+end
