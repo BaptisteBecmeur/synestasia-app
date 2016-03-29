@@ -75,6 +75,10 @@ group :development, :test do
   # Tests
   gem 'rspec-rails', '~> 3.0'
   gem 'spring-commands-rspec'
+
+  # Use the 'dotenv-rails' gem to replace the 'figaro' gem
+  # https://github.com/bkeepers/dotenv
+  # gem 'dotenv-rails'
 end
 
 group :development do
