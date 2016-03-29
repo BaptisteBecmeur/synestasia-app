@@ -45,6 +45,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 # Google Auth
 gem 'omniauth-google-oauth2'
+# Images
+gem 'carrierwave'
 
 
 group :development, :test do
