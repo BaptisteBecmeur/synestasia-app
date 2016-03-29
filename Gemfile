@@ -43,6 +43,8 @@ gem 'autoprefixer-rails'
 gem 'omniauth'
 # Facebook Oauth
 gem 'omniauth-facebook'
+# Google Auth
+gem 'omniauth-google-oauth2'
 
 
 group :development, :test do
