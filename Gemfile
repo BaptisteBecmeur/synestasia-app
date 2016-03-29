@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.0'
 
 # Authentification
 gem 'devise'
+# Multiple table inheritance
+gem 'active_record-acts_as'
 
 
 group :development, :test do

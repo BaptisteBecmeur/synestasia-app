@@ -20,6 +20,9 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_record-acts_as (1.0.8)
+      activerecord (~> 4, >= 4.1.2)
+      activesupport (~> 4)
     activejob (4.2.6)
       activesupport (= 4.2.6)
       globalid (>= 0.3.0)
@@ -159,6 +162,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_record-acts_as
   byebug
   coffee-rails (~> 4.1.0)
   devise
