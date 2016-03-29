@@ -9,6 +9,8 @@ gem 'pg', '~> 0.18'
 gem 'puma'
 # Environnement variables
 gem 'figaro'
+# Internalization
+gem 'rails-i18n', '~> 4.0.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
