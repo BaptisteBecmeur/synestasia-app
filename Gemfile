@@ -37,6 +37,8 @@ gem 'devise'
 gem 'active_record-acts_as'
 # Forms
 gem 'simple_form'
+# Prefixs CSS
+gem 'autoprefixer-rails'
 
 
 group :development, :test do
