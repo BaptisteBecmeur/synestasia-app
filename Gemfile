@@ -49,6 +49,8 @@ gem 'omniauth-google-oauth2'
 gem 'carrierwave'
 # Storage
 gem 'cloudinary'
+# Ruby library for Markdown processing
+gem 'redcarpet'
 
 
 group :development, :test do
