@@ -22,5 +22,10 @@ module SynestasiaApp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Turns off the Rails asset pipeline log
+    config.quiet_assets = true
+    # Supress output for other paths
+    # config.quiet_assets_paths << '/silent/'
   end
 end

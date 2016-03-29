@@ -68,6 +68,8 @@ group :development do
   # Styling errors
   gem "better_errors"
   gem "binding_of_caller"
+  # Quiet assets
+  gem 'quiet_assets'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
