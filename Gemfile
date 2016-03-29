@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 # Multiple table inheritance
 gem 'active_record-acts_as'
+# Forms
+gem 'simple_form'
 
 
 group :development, :test do
