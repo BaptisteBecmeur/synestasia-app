@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 # Multiple table inheritance
 gem 'active_record-acts_as'
+# Sortable active record
+gem 'acts_as_list'
 # Forms
 gem 'simple_form'
 # Prefixs CSS
