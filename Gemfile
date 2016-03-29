@@ -54,6 +54,8 @@ gem 'cloudinary'
 # Ruby library for Markdown processing
 gem 'redcarpet'
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -76,5 +78,7 @@ group :development do
   gem 'quiet_assets'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :production do
+  # Heroku
+  gem 'rails_12factor'
+end
