@@ -27,6 +27,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 # Fontawesome
 gem 'font-awesome-sass', '~> 4.5.0'
+
+# Bower : for using CSS / JS externals libraries (Bootstrap, DataTables, etc ...).
+# Use to replace gem of assets (bootstrap-sass, fontawesome, etc ...)
+# https://github.com/rharriso/bower-rails
+# gem "bower-rails", "~> 0.10.0"
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
