@@ -1,0 +1,35 @@
+<%= simple_form_for @symbole, :defaults => {:required => true} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<%= f.hidden_field :lang, value: "Japonais"%>
+  	<%= f.select :symbole_type, options_for_select([["Kanji", "kanji"], ["Hiragana/Katagana", "hiragana_and_katagana"]]) , {:prompt => "Type de symbole", selected: @symbole.symbole_type}, {required: true} %>
+  	<div id="specific_attributes">
+  	</div>
+  	<%= f.input :example_fr, placeholder: "Exemple", label: "Exemple" %>
+  	<%= f.input :css_class, placeholder: "Nom de la classe css" , label: "Classe"%>
+  	
+  </div>
+  
+  <div class="form-actions">
+    <%= f.button :submit, "Valider" %>
+  </div>
+<% end %>
+
+
+  <script type="text/javascript">
+  	$( document ).ready(function() {
+		$('#symbole_symbole_type').change(function(){
+      if ($('#symbole_symbole_type option:selected').val() == "" ){
+        $("#specific_attributes").html("");
+      }else{
+  		  $.ajax({
+  		    url: "<%=symboles_load_attributes_form_path%>",
+  		    type: "POST",
+  		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_symbole_type option:selected').val()},
+  		  })
+      }
+		});
+    $('#symbole_symbole_type').trigger("change");
+	});
+  </script>

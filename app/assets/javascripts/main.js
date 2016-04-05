@@ -1,9 +1,9 @@
 $( document ).ready(function() {
 
-  var initSimplemde = function(){
+  /*var initSimplemde = function(){
     var simplemde = new SimpleMDE();
   };
 
-  initSimplemde();
+  initSimplemde();*/
 
 });
