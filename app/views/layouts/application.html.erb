@@ -8,12 +8,17 @@
   <!-- Simplemde -->
   <!--<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
   <script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>-->
-
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'shared/navbar' %>
+  <div class="flashes">
+      <%= render 'shared/flashes' %>
+    </div>
 
-<%= yield %>
+  <%= yield %>
+
+  <%= render 'shared/footer' %>
 
 </body>
 </html>

@@ -1,0 +1,61 @@
+<nav class="navbar-wagon">
+  <div class="container navbar-wagon-container">
+
+  <%= link_to root_path do  %>
+     <div class= "header-logo">
+        <%= image_tag "logo-synestasia-bg.png" %>
+     </div>
+  <% end %>
+
+    <div class="navbar-wagon-pusher"></div>
+
+    <%= link_to t(".top_call_to_action", default: "BLOG"), "#", class: " blog-style separator-navbar" %>
+
+    <hr class="hidden-xs hidden-sm">
+
+    <% if user_signed_in? %>
+
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= image_tag current_user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <!-- <span class= "username-style"><%= current_user.first_name %></span> -->
+
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+
+            <li>
+              <%= link_to root_path do %>
+                <i class="fa fa-user"></i> <%= t ".profile", default: "Dashboard" %>
+              <% end %>
+            </li>
+             <li>
+              <%= link_to favs_path do %>
+                <i class="fa fa-heart"></i> <%= t ".profile", default: "Cartes à réviser" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to hiraganas_mix_path do %>
+                <i class="fa fa-language"></i>  <%= t ".profile", default: "Mélanger les cartes" %>
+              <% end %>
+            </li>
+            <li>
+               <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Editer mon profil" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Déconnexion" %>
+              <% end %>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    <% else %>
+      <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "sign-navbar" %>
+      <%= link_to t(".sign_up", default: "Inscription"), new_user_registration_path, class: "sign-navbar signup-navbar" %>
+    <% end %>
+  </div>
+</nav>
+
+
