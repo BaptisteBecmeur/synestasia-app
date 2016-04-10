@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   get 'legal', to: 'pages#legal'
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :symboles
   post 'symboles/load_form'

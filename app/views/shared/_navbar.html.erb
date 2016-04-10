@@ -27,16 +27,9 @@
                 <i class="fa fa-user"></i> <%= t ".profile", default: "Dashboard" %>
               <% end %>
             </li>
-             <li>
-              <%= link_to favs_path do %>
-                <i class="fa fa-heart"></i> <%= t ".profile", default: "Cartes à réviser" %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to hiraganas_mix_path do %>
-                <i class="fa fa-language"></i>  <%= t ".profile", default: "Mélanger les cartes" %>
-              <% end %>
-            </li>
+
+            <!-- Add new fields User -->
+
             <li>
                <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Editer mon profil" %>
