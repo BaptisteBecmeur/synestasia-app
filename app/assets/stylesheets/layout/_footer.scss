@@ -8,7 +8,7 @@
     font-weight: 300;
     padding-bottom: 5px;
 
-    .list-title p {
+    .list-title  {
     font-size:16px;
     color: white;
     font-weight:400;
@@ -16,12 +16,12 @@
 }
 
 .footer a {
-  color:whitesmoke;
+  color: whitesmoke;
   &:hover {
-    color:#C7C9C7;
+    text-decoration: none;
+    color: #C7C9C7;
   }
 }
-
 
 .line-separator {
     border-bottom: 1px solid white;
@@ -40,10 +40,3 @@
     margin-left: -15px;
     margin-right: -15px;
 }
-
-
-
-
-
-
-
