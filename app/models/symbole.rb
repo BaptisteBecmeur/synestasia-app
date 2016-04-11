@@ -6,7 +6,7 @@ class Symbole < ActiveRecord::Base
 	accepts_nested_attributes_for :kanji_attribute, :allow_destroy => true
 	
 	#languages
-	scope :jp, -> { where(lang: 'Japanese')}
+	scope :jp, -> { where(lang: 'Japonais')}
 
 	#types
 	scope :hiraganas_and_kataganas , -> { where(symbole_type: 'hiragana_and_katagana')}

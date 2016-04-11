@@ -16,7 +16,7 @@
         $("#lang_form").html("");
       }else{
   		  $.ajax({
-  		    url: "<%=symboles_load_form_path%>",
+  		    url: "<%=load_form_symboles_path%>",
   		    type: "POST",
   		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_lang option:selected').val()},
   		  })

@@ -24,7 +24,7 @@
         $("#specific_attributes").html("");
       }else{
   		  $.ajax({
-  		    url: "<%=symboles_load_attributes_form_path%>",
+  		    url: "<%=load_attributes_form_symboles_path%>",
   		    type: "POST",
   		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_symbole_type option:selected').val()},
   		  })

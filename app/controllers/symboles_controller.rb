@@ -7,6 +7,11 @@ class SymbolesController < ApplicationController
     @symboles = Symbole.all
   end
 
+  def japonais
+    @symboles = Symbole.jp
+    render "index"
+  end
+
   # GET /symboles/1
   # GET /symboles/1.json
   def show
