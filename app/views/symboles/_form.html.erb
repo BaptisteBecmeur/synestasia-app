@@ -8,7 +8,7 @@
 <div id="lang_form">
 </div>
 
-<% content_for :javascript do %> 
+<% content_for :javascript do %>
   <script type="text/javascript">
   	$( document ).ready(function() {
 		$('#symbole_lang').change(function(){
@@ -18,7 +18,7 @@
   		  $.ajax({
   		    url: "<%=symboles_load_form_path%>",
   		    type: "POST",
-  		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_lang option:selected').val()},
+  		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_lang option:selected').val(), authenticity_token: $("meta[name=csrf-token]").attr("content")},
   		  })
       }
 		});
