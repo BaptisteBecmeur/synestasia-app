@@ -9,6 +9,12 @@ class SymbolesController < ApplicationController
 
   def japonais
     @symboles = Symbole.jp
+    case params[:type]
+    when "kanas"
+      @symboles = @symboles.kanas
+    when "kanjis"
+      @symboles = @symboles.kanjis
+    end    
     render "index"
   end
 

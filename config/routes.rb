@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :symboles do 
-    get 'japonais' , on: :collection
+    get 'japonais(/:type)', to: "symboles#japonais" , on: :collection
     post 'load_form' , on: :collection
     post 'load_attributes_form' , on: :collection
   end
