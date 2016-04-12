@@ -17,6 +17,25 @@ class Symbole < ActiveRecord::Base
       check_specific_attributes
   	end
 
+  	def hiragana_value
+  		specific_attributes.try(:hiragana_value)
+  	end
+
+  	def katakana_value
+  		specific_attributes.try(:katakana_value)
+  	end
+
+  	def value
+  		specific_attributes.try(:value)
+  	end
+
+  	def concept
+  		specific_attributes.try(:concept)
+  	end
+
+  	def fr
+  		specific_attributes.try(:fr)
+  	end
 
 	def specific_attributes
 		case self.symbole_type
