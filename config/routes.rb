@@ -10,9 +10,12 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :symboles
-  post 'symboles/load_form'
-  post 'symboles/load_attributes_form'
+  resources :symboles do 
+    get 'japonais' , on: :collection
+    post 'load_form' , on: :collection
+    post 'load_attributes_form' , on: :collection
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

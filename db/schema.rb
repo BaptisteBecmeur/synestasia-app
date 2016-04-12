@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410100924) do
+ActiveRecord::Schema.define(version: 20160412090729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "hiragana_and_katagana_attributes", force: :cascade do |t|
+  create_table "kana_attributes", force: :cascade do |t|
     t.integer  "symbole_id"
-    t.string   "hirahana_value"
-    t.string   "katagana_value"
+    t.string   "hiragana_value"
+    t.string   "katakana_value"
     t.string   "fr"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
