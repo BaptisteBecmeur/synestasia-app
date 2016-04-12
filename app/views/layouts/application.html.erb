@@ -20,9 +20,18 @@
 
   <%= render 'shared/footer' %>
 
-  <!-- js flipcard -->
+  <!-- jquery flipcard -->
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.20/dist/jquery.flip.min.js"></script>
+
+  <!-- js FlipCard -->
+    <script >
+      $(".card").flip({axis: 'y'});
+    </script>
+
+    <script >
+      $(".cardgenerator").flip({axis: 'x'});
+    </script>
 
 </body>
 </html>

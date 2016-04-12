@@ -1,2 +1,165 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<div class="container-page">
+  <div class="padding-page">
+    <div class="container-fluid">
+      <div class="row">
+        <div class= "col-md-8 col-md-offset-2 form-page">
+          <div class="form-bgpage">
+
+            <h1 class="text-center"><span class="inset-synestesie">SYNESTASIA, QU'EST-CE QUE C'EST ?</span></h1>
+
+            <p class="text-center"><b>SynestasiA est une start-up française dans le domaine de l’apprentissage des langues étrangères.</b></p>
+
+            <p class="text-center"><b>SynestasiA se base sur une méthode pédagogique innovante et stimulante : <%= link_to "l’approche synesthésique.", synestesie_path, target: :_blank %> Il s’agit de lier tous nos sens (vision, ouïe, toucher, et même goût et odorat) pour favoriser un apprentissage à la fois plus rapide et durable.</b></p>
+
+            <p class="text-center"><b>SynestasiA se spécialise dans les langues asiatiques et orientales, dont l’écriture — n’utilisant pas notre alphabet latin -
+            se révèle être une difficulté majeure, souvent redoutée par les nouveaux utilisateurs.</b></p>
+          </div>
+        </div>
+
+        <div class= "col-md-8 col-md-offset-2">
+          <%= cl_image_tag("colorsexplosion2_1_tqjhjl.jpg", :class => 'color-pix1')%>
+        </div>
+
+        <div class= "col-md-8 col-md-offset-2 form-page">
+          <div class="form-bgpage">
+
+            <h3 class="text-center"><span class="inset-synestesie">Comment ça fonctionne</span></h3>
+
+            <p class="text-center"><b>À l’écrit :</b> chaque phonème est associé à une couleur particulière, afin d’en faciliter le déchiffrage et la mémorisation lors de la lecture, qui est ainsi rendue plus intuitive et sensorielle.</p>
+
+            <p class="text-center"><b>À l’oral :</b> les phrases et les mots sont associés à des contextes sonores particuliers. Lors des classes en présentiel, les phrases et les mots, phonèmes et caractères peuvent également être associés à des gestes et mouvements particuliers (kinestésie), des odeurs et des goûts (olfactif-gustatif).</p>
+
+            <p class="text-center"><b>Multi supports :</b> app, plateforme web, réseaux sociaux, manuels, flashcards, cours en présentiel</p>
+
+          </div>
+        </div>
+
+        <div class= "col-md-8 col-md-offset-2 form-page">
+          <div class="form-bgpage">
+
+            <h3 class="text-center"><span class="inset-synestesie">Que propose SynestasiA ?</span></h3>
+
+            <p>SynestasiA propose formations en présentiel et production de matériel pédagogique d’une part, et plateforme e-learning d’autre part :</p>
+
+            <p><i class="fa fa-caret-right"></i> Les formations en présentiel se déclinent sous forme de cours réguliers & stages intensifs / immersifs dans le pays de la langue étudiée;
+            </p>
+
+            <p><i class="fa fa-caret-right"></i> Le matériel pédagogique consiste principalement en manuels imprimés, flashcards et autres outils ludiques;
+            </p>
+
+            <p><i class="fa fa-caret-right"></i> La plateforme e-learning et l'app associée offre l'occasion d'un modèle à la fois innovant sur la plan économique et stimulant sur le plan pédagogique.</p>
+
+          </div>
+        </div>
+
+        <div class= "col-md-8 col-md-offset-2 form-page">
+          <div class="form-bgpage">
+
+            <h3 class="text-center"><span class="inset-synestesie">Un business model innovant (et motivant !)</span></h3>
+
+            <p class="text-center">La plateforme est en accès illimité sous forme de « gratuité inversée » : pour un forfait mensuel équivalent à 1€ par jour, chaque euro est reporté au mois suivant sous réserve d’une connexion quotidienne d’une durée minimum de 7 minutes à la plateforme.</p>
+
+            <p class="text-center"><b>Ainsi, l’utilisateur ne paye en réalité que pour les jours où il ne se connecte pas (et donc ne s’entraîne pas). Cela l’encourage à se connecter plus régulièrement, et permet un réel progrès. En se connectant quotidiennement, l'abonnement de l'utilisateur est renouvelé automatiquement, gratuitement et indéfiniment. Et l'utilisateur progresse vraiment !</b></p>
+
+            <p class="text-center">Par ailleurs, le montant prélevé sur la base des jours où l’usager ne s’est pas connecté est restitué sous forme d’avoir, pour toute inscription à un stage par exemple.</p>
+          </div>
+        </div>
+
+        <div class= "col-md-8 col-md-offset-2">
+          <%= cl_image_tag("japflag_crtoud.jpg", :class => 'color-pix1')%>
+        </div>
+
+        <div class= "col-md-8 col-md-offset-2 form-page">
+          <div class="form-bgpage">
+
+            <h3 class="text-center"><span class="inset-synestesie">2016 sera l'année du Japon !</span></h3>
+
+            <p>Cette année, l’équipe se concentre sur le développement de la méthode pour l’apprentissage du japonais par les Français. La méthode passera ensuite à l’apprentissage du français par les Japonais. A partir de l'année suivante nous comptons passer à l’apprentissage du chinois mandarin par les Français et vice-versa, puis coréen, vietnamien...</p>
+
+            <p>Les flashcards et manuels de japonais SynestasiA seront en prévente sur le site de crowdfunding Ulule. Au programme, une première série de manuels et de flashcards correspondantes :
+              <ul class="list-unstyled" >
+                <li><i class="fa fa-caret-right"></i> Démarrer le japonais</li>
+                <li><i class="fa fa-caret-right"></i> Apprendre les hiraganas</li>
+                <li><i class="fa fa-caret-right"></i> Apprendre les katakanas</li>
+                <li><i class="fa fa-caret-right"></i> Maîtriser les premiers kanjis</li>
+              </ul>
+            </p>
+
+            <p>Mi-mars : décollage d’une partie de l’équipe pour Tokyo, afin d’y mettre en place les premières demo class à destination des Français et francophones voulant apprendre le japonais sur place, et à destination des Japonais souhaitant apprendre le français.</p>
+          </div>
+        </div>
+
+        <div class= "col-md-8 col-md-offset-2">
+          <%= cl_image_tag("beaucile2_yoaryo.jpg", :class => 'color-pix1')%>
+        </div>
+
+        <div class= "col-md-8 col-md-offset-2 form-page">
+          <div class="form-bgpage">
+
+            <h3 class="text-center"><span class="inset-synestesie">Participez à une DEMO CLASS :-)</span></h3>
+
+            <p class="text-center"><b>Les premières « demo class » seront mises en place en février à Paris et à Grenoble. Ces demo class sont gratuites, ouvertes à tous, et ont pour but de faire connaître la méthode et recueillir les premières impressions des participants.</b></p>
+
+            <p class="text-center"><b>Tous les niveaux et tous les profils sont acceptés : débutants ou faux débutants, intermédiaires, avancés, bilingues, natifs, mais aussi personnes réellement intéressées, voire passionnées ou simplement curieuses...</b></p>
+
+            <p class="text-center"><b>Vous souhaitez qu'on organise une demo class dans votre ville ? <%= link_to "Contactez-nous !", contact_path %></b></p>
+          </div>
+        </div>
+
+        <div class= "col-md-8 col-md-offset-2 form-page">
+          <div class="form-bgpage">
+
+              <h3 class="text-center"><span class="inset-synestesie">Qui sommes-nous ?</span></h3>
+              <br/>
+
+              <ul class="list-unstyled list-inline text-center">
+                 <li><%=cl_image_tag("valentin_tmdpw7.png",:class => 'picture-team')%>
+                    <h5>Valentin</h5>
+                    <h6>Direction pédagogique</h6>
+                  </li>
+
+                 <li><%=cl_image_tag("gilles_pdjbkz.png",:class => 'picture-team')%>
+                    <h5>Gilles</h5>
+                    <h6>Illustration<br/></h6>
+                 </li>
+                 <li><%=cl_image_tag("aurelie_leygdl.png",:class => 'picture-team')%>
+                    <h5>Aurélie</h5>
+                    <h6>Communication & CM</h6>
+                 </li>
+                 <li><%=cl_image_tag("baptiste_nttben.png",:class => 'picture-team')%>
+                    <h5>Baptiste</h5>
+                    <h6>Développement web</h6>
+                  </li>
+              </ul>
+
+          </div>
+        </div>
+
+        <div class= "col-md-8 col-md-offset-2 form-page">
+          <div class="form-bgpage">
+
+            <h3 class="text-center"><span class="inset-synestesie">Qui serez-vous ?</span></h3>
+
+            <p>Vous trouvez le défi stimulant ? Vous êtes intéressé par la démarche et même passionné par le Japon ou les langues étrangères ? SynestasiA étudie toute proposition de contribution au projet et recherche notamment :</p>
+
+            <p><ul class="list-unstyled" >
+                <li><i class="fa fa-caret-right"></i> Des développeurs Ruby on rails</li>
+                <li><i class="fa fa-caret-right"></i> Des professeurs de japonais (natifs ou non, niveau intermédiaire à avancé)</li>
+                <li><i class="fa fa-caret-right"></i> des coordinateurs pour chaque projet (formations / matériel / app & web)</li>
+              </ul>
+            </p>
+
+            <h5 class="text-center"><b>et toute autre compétence et esprit créatif motivé pour contribuer au développement de SynestasiA !
+              <ul class="list-unstyled list-inline text-center">
+                <li class="contactbutton-section">
+                  <%= link_to "Contactez-nous", "https://synestasia.typeform.com/to/Pxq5oS", class:'subscribe-button contact-button subscribe-contact', target: '_blank' %>
+                </li>
+              </ul>
+          </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

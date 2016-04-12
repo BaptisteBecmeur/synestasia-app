@@ -1,3 +1,43 @@
+<div class="container-page">
+  <div class="padding-page">
+    <div class="container-fluid">
+      <div class="row">
+         <h4 class="text-center"><%= @alert_message %></h4>
+        <ul class="list-inline text-center card-frame">
+          <li>
+            <div class="card">
+              <div class="front">
+                <!-- PARAMETRER LE RESPONSIVE BOOTSTRAP -->
+                  <!-- <div class="col-sm- col-xs-4 col-md-3"> -->
+                <div class="card-hiragana ">
+                  <h1><b><%= @symbole.specific_attributes.hirahana_value  %></b></h1>
+                </div>
+                <div class="card-katakana">
+                  <p><%= @symbole.specific_attributes.hirahana_value  %></p>
+                </div>
+                <!-- </div> -->
+              </div>
+              <div class="back">
+                <div class="col-sm-3 col-xs-4 col-md-3 containerbackcards-<%= @symbole.specific_attributes.hirahana_value  %>%>">
+                    <div class="backcard-hiragana">
+                      <h1><b><%= @symbole.specific_attributes.hirahana_value  %></b></h1>
+                    </div>
+                    <div class="card-bigletter">
+                      <p><%= @symbole.specific_attributes.hirahana_value  %></p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_symbole_path(@symbole) %> |
