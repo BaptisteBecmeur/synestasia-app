@@ -11,10 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329084655) do
+ActiveRecord::Schema.define(version: 20160412090729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "kana_attributes", force: :cascade do |t|
+    t.integer  "symbole_id"
+    t.string   "hiragana_value"
+    t.string   "katakana_value"
+    t.string   "fr"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "kanji_attributes", force: :cascade do |t|
+    t.integer  "symbole_id"
+    t.string   "value"
+    t.string   "fr"
+    t.string   "concept"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "symboles", force: :cascade do |t|
+    t.string   "lang"
+    t.string   "example_fr"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "symbole_type"
+    t.string   "css_class"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

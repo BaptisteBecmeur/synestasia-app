@@ -1,0 +1,28 @@
+<%= simple_form_for(@symbole) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+  	<%= f.select :lang, options_for_select([["Japonais", "jp"], ["Chinois", "cn"]]), {:prompt => "Langue"}%>
+  </div>
+<% end %>
+
+<div id="lang_form">
+</div>
+
+<% content_for :javascript do %> 
+  <script type="text/javascript">
+  	$( document ).ready(function() {
+		$('#symbole_lang').change(function(){
+      if ($('#symbole_lang option:selected').val() == "" ){
+        $("#lang_form").html("");
+      }else{
+  		  $.ajax({
+  		    url: "<%=load_form_symboles_path%>",
+  		    type: "POST",
+  		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_lang option:selected').val()},
+  		  })
+      }
+		});
+    $('#symbole_lang').trigger("change");
+	});
+  </script>
+<% end %>
