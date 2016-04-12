@@ -1,7 +1,7 @@
 class Symbole < ActiveRecord::Base
 
-	has_one :hiragana_and_katagana_attribute, :class_name => "HiraganaAndKataganaAttribute", :foreign_key => "symbole_id"
-	accepts_nested_attributes_for :hiragana_and_katagana_attribute, :allow_destroy => true
+	has_one :kana_attribute, :class_name => "KanaAttribute", :foreign_key => "symbole_id"
+	accepts_nested_attributes_for :kana_attribute, :allow_destroy => true
 	has_one :kanji_attribute, :class_name => "KanjiAttribute", :foreign_key => "symbole_id"
 	accepts_nested_attributes_for :kanji_attribute, :allow_destroy => true
 	
@@ -9,7 +9,7 @@ class Symbole < ActiveRecord::Base
 	scope :jp, -> { where(lang: 'Japonais')}
 
 	#types
-	scope :hiraganas_and_kataganas , -> { where(symbole_type: 'hiragana_and_katagana')}
+	scope :kanas , -> { where(symbole_type: 'kana')}
 	scope :kanjis , -> { where(symbole_type: 'kanji')}
 
 
@@ -22,8 +22,8 @@ class Symbole < ActiveRecord::Base
 		case self.symbole_type
 		when "kanji"
 			return kanji_attribute
-		when "hiragana_and_katagana"
-			return hiragana_and_katagana_attribute
+		when "kana"
+			return kana_attribute
 		else
 			return nil
 		end

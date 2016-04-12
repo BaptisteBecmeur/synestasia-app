@@ -32,7 +32,7 @@ class SymbolesController < ApplicationController
     @symbole = Symbole.new()
     if symbole_params[:symbole_type].present?
       @symbole.build_kanji_attribute if symbole_params[:symbole_type] == "kanji"
-      @symbole.build_hiragana_and_katagana_attribute if symbole_params[:symbole_type] == "hiragana_and_katagana"
+      @symbole.build_kana_attribute if symbole_params[:symbole_type] == "kana"
     end
     @symbole.assign_attributes(symbole_params)
 
@@ -102,7 +102,7 @@ class SymbolesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def symbole_params
       params.require(:symbole).permit(:lang, :example_fr, :symbole_type, :css_class, kanji_attribute_attributes: [:value,:concept, :fr],
-                                                                                     hiragana_and_katagana_attribute_attributes: [:hirahana_value,:katagana_value, :fr]
+                                                                                     kana_attribute_attributes: [:hiragana_value,:katakana_value, :fr]
                                                                                      )
     end
 end

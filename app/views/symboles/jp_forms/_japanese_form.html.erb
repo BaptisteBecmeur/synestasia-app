@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
   	<%= f.hidden_field :lang, value: "Japonais"%>
-  	<%= f.select :symbole_type, options_for_select([["Kanji", "kanji"], ["Hiragana/Katagana", "hiragana_and_katagana"]]) , {:prompt => "Type de symbole", selected: @symbole.symbole_type}, {required: true} %>
+  	<%= f.select :symbole_type, options_for_select([["Kanji", "kanji"], ["Kana", "kana"]], selected: @symbole.symbole_type) , {:prompt => "Type de symbole"}, {required: true} %>
   	<div id="specific_attributes">
   	</div>
   	<%= f.input :example_fr, placeholder: "Exemple", label: "Exemple" %>
