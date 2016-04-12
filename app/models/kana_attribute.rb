@@ -1,4 +1,11 @@
 class KanaAttribute < ActiveRecord::Base
-	belongs_to :symboles
-	validates :hiragana_value, :katakana_value, :fr, :presence => true
+	
+	## relations ###############
+		belongs_to :symboles
+	## relations ###############
+
+	## validations #############
+		validates :hiragana_value, :katakana_value, :fr, :presence => true
+	## validations #############
+
 end
