@@ -18,7 +18,7 @@
   		  $.ajax({
   		    url: "<%=load_form_symboles_path%>",
   		    type: "POST",
-  		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_lang option:selected').val()},
+  		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_lang option:selected').val(), authenticity_token: $("meta[name=csrf-token]").attr("content")},
   		  })
       }
 		});

@@ -21,7 +21,8 @@
         e.preventDefault();   
           $.ajax({
             url: "<%=load_select_tag_sentences_path%>",
-            type: "POST"
+            type: "POST",
+            data: {authenticity_token: $("meta[name=csrf-token]").attr("content")}
           })
       });
     });
