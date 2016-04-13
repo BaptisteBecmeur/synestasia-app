@@ -1,0 +1,6 @@
+var SELECTTAGS = $( "select[id^='sentence_hash_symbole_ids']" )
+var COUNT = SELECTTAGS.length;
+var LAST = SELECTTAGS.last()
+
+LAST.after("<%= j(render('sentences/jp_forms/select_tag'))%>");
+

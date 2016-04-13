@@ -1,4 +1,4 @@
-<%= simple_form_for(@symbole) do |f| %>
+<%= simple_form_for(@sentence) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
   	<%= f.select :lang, options_for_select([["Japonais", "jp"], ["Chinois", "cn"]]), {:prompt => "Langue"}%>
@@ -11,18 +11,18 @@
 <% content_for :javascript do %> 
   <script type="text/javascript">
   	$( document ).ready(function() {
-		$('#symbole_lang').change(function(){
-      if ($('#symbole_lang option:selected').val() == "" ){
+		$('#sentence_lang').change(function(){
+      if ($('#sentence_lang option:selected').val() == "" ){
         $("#lang_form").html("");
       }else{
   		  $.ajax({
-  		    url: "<%=load_form_symboles_path%>",
+  		    url: "<%=load_form_sentences_path%>",
   		    type: "POST",
-  		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_lang option:selected').val(), authenticity_token: $("meta[name=csrf-token]").attr("content")},
+  		    data: {id:"<%=@sentence.try(:id)%>",form_name: $('#sentence_lang option:selected').val(), authenticity_token: $("meta[name=csrf-token]").attr("content")},
   		  })
       }
 		});
-    $('#symbole_lang').trigger("change");
+    $('#sentence_lang').trigger("change");
 	});
   </script>
 <% end %>

@@ -1,0 +1,13 @@
+<%= select_tag "sentence_hash_symbole_ids_", options_for_select(Symbole.jp.collect {|s| [ s.value, s.id]}, selected: nil) , {:prompt => "Symbole"} %>
+
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+      var SELECTTAGS = $( "select[id^='sentence_hash_symbole_ids']" )
+      var COUNT = SELECTTAGS.length;
+      var LAST = SELECTTAGS.last()
+      LAST.attr("id", LAST.attr("id") +  COUNT);
+      LAST.attr("name", "sentence[hash_symbole_ids]["+COUNT+"]");
+      LAST.attr("required", "required");
+    });
+</script>
