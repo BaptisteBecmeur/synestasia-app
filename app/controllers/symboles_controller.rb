@@ -7,6 +7,9 @@ class SymbolesController < ApplicationController
     @symboles = Symbole.all
   end
 
+  # GET symboles/japonais
+  # GET symboles/japonais/kanas
+  # GET symboles/japonais/kanjis
   def japonais
     @symboles = Symbole.jp
     case params[:type]

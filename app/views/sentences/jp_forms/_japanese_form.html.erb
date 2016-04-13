@@ -1,0 +1,28 @@
+<%= simple_form_for @sentence, :defaults => {:required => true} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<%= f.hidden_field :lang, value: "Japonais"%>
+      <%= f.fields_for "hash_symbole_ids" do |ssa| -%>
+        <%= ssa.select "1", options_for_select(Symbole.jp.collect {|s| [ s.value, s.id]}, selected: nil) , {:prompt => "Symbole"}, {required: true} %>
+        <%= ssa.select "2", options_for_select(Symbole.jp.collect {|s| [ s.value, s.id]}, selected: nil) , {:prompt => "Symbole"}, {required: true} %>
+      <% end %>
+    <button id="add-symbol"> Ajouter un symbole </button>
+  </div>
+  
+  <div class="form-actions">
+    <%= f.button :submit, "Valider" %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+      $('#add-symbol').click(function(e){
+        e.preventDefault();   
+          $.ajax({
+            url: "<%=load_select_tag_sentences_path%>",
+            type: "POST"
+          })
+      });
+    });
+</script>
