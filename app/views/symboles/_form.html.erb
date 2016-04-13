@@ -1,28 +1,30 @@
-<%= simple_form_for(@symbole) do |f| %>
-  <%= f.error_notification %>
-  <div class="form-inputs">
-  	<%= f.select :lang, options_for_select([["Japonais", "jp"], ["Chinois", "cn"]]), {:prompt => "Langue"}%>
+<div class= " col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <%= simple_form_for(@symbole) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+    	<%= f.select :lang, options_for_select([["Japonais", "jp"], ["Chinois", "cn"]]), {:prompt => "Langue"}%>
+    </div>
+  <% end %>
+
+  <div id="lang_form">
   </div>
-<% end %>
 
-<div id="lang_form">
+  <% content_for :javascript do %>
+    <script type="text/javascript">
+    	$( document ).ready(function() {
+  		$('#symbole_lang').change(function(){
+        if ($('#symbole_lang option:selected').val() == "" ){
+          $("#lang_form").html("");
+        }else{
+    		  $.ajax({
+    		    url: "<%=load_form_symboles_path%>",
+    		    type: "POST",
+    		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_lang option:selected').val(), authenticity_token: $("meta[name=csrf-token]").attr("content")},
+    		  })
+        }
+  		});
+      $('#symbole_lang').trigger("change");
+  	});
+    </script>
+  <% end %>
 </div>
-
-<% content_for :javascript do %>
-  <script type="text/javascript">
-  	$( document ).ready(function() {
-		$('#symbole_lang').change(function(){
-      if ($('#symbole_lang option:selected').val() == "" ){
-        $("#lang_form").html("");
-      }else{
-  		  $.ajax({
-  		    url: "<%=load_form_symboles_path%>",
-  		    type: "POST",
-  		    data: {id:"<%=@symbole.try(:id)%>",form_name: $('#symbole_lang option:selected').val(), authenticity_token: $("meta[name=csrf-token]").attr("content")},
-  		  })
-      }
-		});
-    $('#symbole_lang').trigger("change");
-	});
-  </script>
-<% end %>

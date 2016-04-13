@@ -1,2 +1,53 @@
-<h1>Pages#start</h1>
-<p>Find me in app/views/pages/start.html.erb</p>
+<div class="container-page">
+  <div class="padding-page">
+    <div class="container-fluid">
+      <div class="row">
+        <h1 class="text-center"><span class="inset-start">APPRENDRE LES LANGUES AVEC DES FLASHCARDS</span></h1>
+          <div class="row demo-frame-first">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <h5>Nous vous proposons de découvrir notre méthode pour apprendre le japonais avec les <b>flashcards hiraganas</b>.
+              C'est l'un des 3 syllabaires (avec les katakanas et les kanjis), qui permet de transcrire la langue japonaise sans ambiguïté.</h5>
+
+              <h5>Chaque hiragana <b>représente une syllabe</b> - qui peut être une voyelle seule A, E, I, O ou U ou une consonne suivie de l'une de ces 5 voyelles.
+              Il y a également le "n" syllabique, ん, dont la prononciation varie en fonction de la syllabe qui le suit.</h5>
+
+              <h5>Ici, on associe respectivement les sons <b>A, E, I, O, U</b> aux couleurs <b>Vert</b>, <b>Rouge</b>, <b>Rose</b>, <b>Bleu</b>, <b>Violet</b>. La perception d'une couleur permet ainsi de découvrir de façon intuitive le son final représenté par tel ou tel caractère ou combinaison de caractères.</h5>
+              <div class="start-gap"></div>
+            </div>
+
+            <%= render 'democards'%>
+
+          <div class="start-gap"></div>
+            <h1 class="text-center"><span class="inset-start">COMMENT ÇA MARCHE ?</span></h1>
+          <div class="row demo-frame start-gap2">
+            <div class= "col-xs-12 col-sm-3 col-md-3 text-center">
+              <%= cl_image_tag("listing-card_xp0ryz.png", :width=>120, :crop=>:scale) %>
+              <p>Faites défiler les cartes en cherchant à retrouver quel est le son associé au caractère présenté (ici, le hiragana en gros au centre).
+            </div>
+            <div class= "col-xs-12 col-sm-3 col-md-3 text-center">
+              <%= cl_image_tag("clue-card_fuwltq.png", :width=>120, :crop=>:scale)%>
+              <p>Si vous avez besoin d'un indice, survolez le caractère avec la souris : la couleur vous donnera alors une indication.</p>
+            </div>
+            <div class= "col-xs-12 col-sm-3 col-md-3 text-center">
+              <%= cl_image_tag("card-info_l8gblq.png", :width=>120, :crop=>:scale) %>
+              <p>Pour en savoir plus, glissez votre curseur en haut à droite : prononciation, audio et visuel, vous trouverez là toutes les informations pour décoder et reproduire le caractère.</p>
+            </div>
+            <div class= "col-xs-12 col-sm-3 col-md-3 text-center">
+              <%= cl_image_tag("flip-card_vj1fqy.png", :width=>120, :crop=>:scale) %>
+              <p>Cliquez sur la carte pour la retourner ! Le caractère se détache alors en blanc sur le fond de couleur correspondant, favorisant sa mémorisation.</p>
+            </div>
+          </div>
+        <ul class="list-unstyled list-inline text-center start-gap">
+          <li>
+            <%= link_to symboles_path do %>
+              <div class="all-hiraganas">
+                <h5>Accéder à tous les hiraganas</h5>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
