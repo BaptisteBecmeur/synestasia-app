@@ -1,4 +1,14 @@
 class KanjiAttribute < ActiveRecord::Base
-	belongs_to :symboles
-	validates :value, :concept, :fr, :presence => true
+
+	
+	## relations ###############
+		belongs_to :symboles
+	## relations ###############
+
+
+	## validations #############
+		validates :value, :concept, :fr, :presence => true
+	## validations #############
+
+
 end
