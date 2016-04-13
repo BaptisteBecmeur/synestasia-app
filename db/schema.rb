@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412090729) do
+ActiveRecord::Schema.define(version: 20160412130617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(version: 20160412090729) do
     t.string   "value"
     t.string   "fr"
     t.string   "concept"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sentence_symboles", force: :cascade do |t|
+    t.integer  "sentence_id"
+    t.integer  "symbole_id"
+    t.integer  "position"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "sentences", force: :cascade do |t|
+    t.string   "lang"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,28 @@
+<%= simple_form_for(@sentence) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+  	<%= f.select :lang, options_for_select([["Japonais", "jp"], ["Chinois", "cn"]]), {:prompt => "Langue"}%>
+  </div>
+<% end %>
+
+<div id="lang_form">
+</div>
+
+<% content_for :javascript do %> 
+  <script type="text/javascript">
+  	$( document ).ready(function() {
+		$('#sentence_lang').change(function(){
+      if ($('#sentence_lang option:selected').val() == "" ){
+        $("#lang_form").html("");
+      }else{
+  		  $.ajax({
+  		    url: "<%=load_form_sentences_path%>",
+  		    type: "POST",
+  		    data: {id:"<%=@sentence.try(:id)%>",form_name: $('#sentence_lang option:selected').val(), authenticity_token: $("meta[name=csrf-token]").attr("content")},
+  		  })
+      }
+		});
+    $('#sentence_lang').trigger("change");
+	});
+  </script>
+<% end %>

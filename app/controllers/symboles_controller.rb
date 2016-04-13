@@ -7,8 +7,17 @@ class SymbolesController < ApplicationController
     @symboles = Symbole.all
   end
 
+  # GET symboles/japonais
+  # GET symboles/japonais/kanas
+  # GET symboles/japonais/kanjis
   def japonais
     @symboles = Symbole.jp
+    case params[:type]
+    when "kanas"
+      @symboles = @symboles.kanas
+    when "kanjis"
+      @symboles = @symboles.kanjis
+    end    
     render "index"
   end
 
@@ -71,6 +80,7 @@ class SymbolesController < ApplicationController
     end
   end
 
+  # (ajax) load form for a specific language
   def load_form
     @symbole = Symbole.new if @symbole.nil?
     if params[:form_name].present?
@@ -79,6 +89,8 @@ class SymbolesController < ApplicationController
       end
     end
   end
+
+  # (ajax) load form for a specific attribute
   def load_attributes_form
     @symbole = Symbole.new if @symbole.nil?
     if params[:form_name].present?
