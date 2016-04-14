@@ -1,10 +1,10 @@
 <%= fields_for 'symbole[kanji_attribute_attributes]', @symbole.kanji_attribute do |ka| %>
-    
+
     <%= ka.label :value, "Kanji :" %>
     <%= ka.text_field :value, label: "Kanji" %>
     <%= ka.label :concept,  "Concept :" %>
     <%= ka.text_field :concept, label: "Concept" %>
     <%= ka.label :fr,  "Transcription :" %>
     <%= ka.text_field :fr, label: "Transcription" %>
-    
+
 <% end %>

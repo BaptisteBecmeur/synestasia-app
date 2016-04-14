@@ -1,0 +1,86 @@
+/* -------------------------------------
+ * Your CSS code for flash notices and alerts
+* ------------------------------------- */
+
+.alert {
+  margin: 0;
+  text-align: center;
+  color: white;
+  position: absolute;
+  z-index: 1;
+  margin: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 45px;
+  border: none;
+}
+.alert-info {
+  background: #066aad;
+}
+.alert-warning {
+  background: #FC5F53;
+}
+
+.disapearUp {
+  animation-name: disapearUp;
+  -webkit-animation-name: disapearUp;
+
+  animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: visible !important;
+}
+
+.disapearUpNow {
+  animation-name: disapearUp;
+  -webkit-animation-name: disapearUp;
+
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: visible !important;
+}
+
+@keyframes disapearUp {
+  0% {
+    // transform: translateY(100%);
+    transform: translateY(0%) translateX(-50%);
+  }
+  70% {
+    // transform: translateY(100%);
+    transform: translateY(0%) translateX(-50%);
+  }
+  80%{
+    // transform: translateY(2%);
+    transform: translateY(8%) translateX(-50%);
+  }
+  85%{
+    // transform: translateY(2%);
+    transform: translateY(8%) translateX(-50%);
+  }
+  100% {
+    // transform: translateY(0%);
+    transform: translateY(-300%) translateX(-50%);
+  }
+}
+
+
+
