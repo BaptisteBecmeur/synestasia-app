@@ -1,5 +1,6 @@
 class Symbole < ActiveRecord::Base
-
+	include Authority::Abilities
+	self.authorizer_name = 'SymboleAuthorizer'
 
 	## relations ###############
 		has_one :kana_attribute, :class_name => "KanaAttribute", :foreign_key => "symbole_id", dependent: :destroy

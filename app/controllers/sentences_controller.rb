@@ -1,4 +1,5 @@
 class SentencesController < ApplicationController
+  authorize_actions_for Sentence, except:[:load_form, :load_select_tag]
   before_action :set_sentence, only: [:show, :edit, :update, :destroy, :load_form]
 
   # GET /sentences

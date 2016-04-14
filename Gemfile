@@ -40,6 +40,9 @@ gem 'font-awesome-sass', '~> 4.5.0'
 
 # Authentification
 gem 'devise'
+# Rolification and Authorizers
+gem 'authority'
+gem 'rolify'
 # Multiple table inheritance
 gem 'active_record-acts_as'
 # Sortable active record
