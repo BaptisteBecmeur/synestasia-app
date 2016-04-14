@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= require bootstrap/popover
 //= require jquery_ujs
 //= require_tree .
+

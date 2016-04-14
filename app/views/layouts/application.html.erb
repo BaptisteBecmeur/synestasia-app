@@ -8,12 +8,30 @@
   <!-- Simplemde -->
   <!--<link rel="stylesheet" href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
   <script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>-->
-
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'shared/navbar' %>
+  <div class="flashes">
+      <%= render 'shared/flashes' %>
+    </div>
 
-<%= yield %>
+  <%= yield %>
+
+  <%= render 'shared/footer' %>
+
+  <!-- jquery flipcard -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.20/dist/jquery.flip.min.js"></script>
+
+  <!-- js FlipCard -->
+    <script >
+      $(".card").flip({axis: 'y'});
+    </script>
+
+    <script >
+      $(".cardgenerator").flip({axis: 'x'});
+    </script>
 
 </body>
 </html>

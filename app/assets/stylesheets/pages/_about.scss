@@ -1,0 +1,65 @@
+h3 {
+  font-weight: 400;
+}
+
+h6 {
+  font-style: italic;
+}
+
+.inset-synestesie {
+  font-size: 30px;
+  box-shadow: inset 0 -10px 0 rgba(255, 242, 0, 1);
+  font-weight: 400;
+}
+
+.container-page {
+  background-color: #f2f2f2;
+  padding: 0;
+  position: relative;
+
+  .form-page {
+    background-color: #fff;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.form-bgpage {
+  position: relative;
+  border:1px solid #fff;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.separcontact {
+  padding-top: 50px;
+}
+
+// Picture Team
+
+.picture-team {
+  height: 120px;
+  width:  120px;
+  border-radius: 50%;
+}
+
+.padding-pix {
+  padding-top: 100px;
+}
+
+// Picture
+
+.color-pix1 {
+  width: 100%;
+}
+
+.contactbutton-section{
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+

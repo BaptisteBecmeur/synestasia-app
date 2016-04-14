@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+// $( document ).ready(function() {
 
   /*var initSimplemde = function(){
     var simplemde = new SimpleMDE();
@@ -6,4 +6,4 @@ $( document ).ready(function() {
 
   initSimplemde();*/
 
-});
+// });

@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  root to: 'pages#home'
+
+  get 'synestesie', to: 'pages#synestesie'
+  get 'about', to: 'pages#about'
+  get 'start', to: 'pages#start'
+  get 'contact', to: 'pages#contact'
+  get 'legal', to: 'pages#legal'
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :symboles do 
     get 'japonais(/:type)', to: "symboles#japonais" , on: :collection
