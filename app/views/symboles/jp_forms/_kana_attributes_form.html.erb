@@ -1,10 +1,11 @@
-<%= fields_for 'symbole[kana_attribute_attributes]', @symbole.kana_attribute do |ka| %>
-
+  <%= fields_for 'symbole[kana_attribute_attributes]', @symbole.kana_attribute do |ka| %>
     <%= ka.label :hiragana_value, "Hiragana :" %>
     <%= ka.text_field :hiragana_value, label: "Hiragana" %><br/>
     <%= ka.label :katakana_value, "Katakana :" %>
     <%= ka.text_field :katakana_value, label: "Katakana" %><br/>
     <%= ka.label :fr,  "Transcription :" %>
     <%= ka.text_field :fr, label: "Transcription" %><br/>
+  <% end %>
 
-<% end %>
+
+
