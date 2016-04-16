@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   root to: 'pages#home'
 
   get 'synestesie', to: 'pages#synestesie'
@@ -24,7 +23,19 @@ Rails.application.routes.draw do
   end
 
   # Posts as articles from blog
-  resources :posts
+  # resources :posts
+
+   resources :posts do
+    resources :post_categories
+  end
+
+  # get 'post_categories/index'
+  # get 'post_categories/show'
+  # get 'post_categories/new'
+  # get 'post_categories/create'
+  # get 'post_categories/edit'
+  # get 'post_categories/update'
+  # get 'post_categories/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
