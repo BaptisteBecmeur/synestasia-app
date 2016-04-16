@@ -2,7 +2,7 @@ class PostCategoriesController < ApplicationController
    before_action :set_post, only: [:show, :new, :create, :destroy]
 
   def show
-    @post_category = PosttCategory.find(params[:id])
+    @post_category = PostCategory.find(params[:id])
   end
 
   def index

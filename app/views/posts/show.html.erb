@@ -14,6 +14,14 @@
                 <%= @post.tag %>
               </div>
 
+        <!-- Post_category -->
+              <div class="category-tab">
+                <% @post.post_categories.each do |post_category| %>
+                  <%= post_category.name %>
+                <% end %>
+              </div>
+       <!-- Fin Post_category -->
+
               </div>
               <div class="intro-part">
                 <h5>
