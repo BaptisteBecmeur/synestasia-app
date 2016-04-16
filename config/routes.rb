@@ -1,18 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'posts/index'
-
-  get 'posts/show'
-
-  get 'posts/create'
-
-  get 'posts/new'
-
-  get 'posts/edit'
-
-  get 'posts/update'
-
-  get 'posts/destroy'
 
   root to: 'pages#home'
 
@@ -24,17 +11,20 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :symboles do 
+  resources :symboles do
     get 'japonais(/:type)', to: "symboles#japonais" , on: :collection
     post 'load_form' , on: :collection
     post 'load_attributes_form' , on: :collection
   end
 
-  resources :sentences do 
+  resources :sentences do
     get 'japonais(/:type)', to: "symboles#japonais" , on: :collection
     post 'load_form' , on: :collection
     post 'load_select_tag' , on: :collection
   end
+
+  # Posts as articles from blog
+  resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
