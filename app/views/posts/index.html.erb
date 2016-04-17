@@ -1,2 +1,26 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="container-formpost">
+  <div id="home-articles">
+    <div class="container">
+      <div class="row">
+        <div class="text-center separ-blog">
+          <h1>Lisez nos derniers articles</h1>
+        </div>
+         <div class="text-center buttons-view-post separ-blog">
+
+          <%= link_to "Créer un article", new_post_path, class: "btn btn-default btn-md" %>
+
+        </div>
+
+          <ul>
+            <% @posts.each do |post| %>
+            <li class=" col-sm-12 col-xs-12 col-md-4 container-cards">
+              <%= render 'posts/postuser', post: post %>
+            </li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
