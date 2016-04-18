@@ -25,9 +25,9 @@ Rails.application.routes.draw do
   # Posts as articles from blog
   # resources :posts
 
-   resources :posts do
-    resources :post_categories
-  end
+   resources :posts #do
+    #resources :post_categories
+  #end
 
   # get 'post_categories/index'
   # get 'post_categories/show'

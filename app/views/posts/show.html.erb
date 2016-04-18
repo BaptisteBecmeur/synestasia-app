@@ -14,13 +14,7 @@
                 <%= @post.tag %>
               </div>
 
-        <!-- Post_category -->
-              <div class="category-tab">
-                <% @post.post_categories.each do |post_category| %>
-                  <%= post_category.name %>
-                <% end %>
-              </div>
-       <!-- Fin Post_category -->
+
 
               </div>
               <div class="intro-part">
@@ -38,7 +32,7 @@
                   <div class="text-center buttons-view-post">
                     <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-default btn-md" %>
                     <%= link_to "Créer un article", new_post_path, class: "btn btn-default btn-md" %>
-                    <%= link_to "Ajouter une catégorie", new_post_post_category_path(@post), class: "btn btn-danger" %>
+
                     <%= link_to "Voir tous les articles", posts_path, class: "btn btn-default btn-md" %>
                 </div>
               </div>
