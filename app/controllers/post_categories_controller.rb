@@ -1,5 +1,5 @@
 class PostCategoriesController < ApplicationController
-   before_action :set_post, only: [:show, :new, :create, :destroy]
+   # before_action :set_post_category, only: [:show, :new, :create, :destroy]
 
   def show
     @post_category = PostCategory.find(params[:id])
@@ -10,7 +10,7 @@ class PostCategoriesController < ApplicationController
   end
 
   def create
-    @post_category = @post.post_categories.new(post_category_params)
+    @post_category = post_categories.new(post_category_params)
     if @post_category.save
       redirect_to @post
     else
@@ -38,11 +38,15 @@ class PostCategoriesController < ApplicationController
   private
 
 
-  def set_post
-    @post = Post.find(params[:post_id])
+  # def set_post
+  #   @post = Post.find(params[:post_id])
+  # end
+
+   def find_post_category
+    @post_category = PostCategory.find(params[:id])
   end
 
   def post_category_params
-    params.require(:post_category).permit(:name, :description, :post_id)
+    params.require(:post_category).permit(:name, :description)
   end
 end

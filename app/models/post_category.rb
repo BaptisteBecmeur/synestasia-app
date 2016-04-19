@@ -1,7 +1,7 @@
 class PostCategory < ActiveRecord::Base
-  belongs_to :post
-  # validates :name, presence: true
+  has_many :posts, dependent: :destroy
 
-   NAMES = ["Japon", "Chine", "Corée du Sud", "Moyen-Orient"]
-   validates :name, inclusion: { in: PostCategory::NAMES, allow_nil: false }
+
+  NAMES = ["Japon", "Chine", "Corée du Sud", "Moyen Orient", "Indien"]
+  validates :name, inclusion: { in: PostCategory::NAMES, allow_nil: false }
 end
