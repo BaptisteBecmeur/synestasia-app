@@ -7,11 +7,11 @@
             <div class="tiny-space">
               <h4 class="text-center">Sélectionnez un Pays</h4>
                 <div class="mini-space">
-                  <%= simple_form_for [@post, @post_category] do |f| %>
+                  <%= simple_form_for [@category] do |f| %>
                   <%= f.error_notification %>
 
 
-                  <%= f.input :name, collection: PostCategory::NAMES, selected: PostCategory::NAMES.first %>
+                  <%= f.input :name, collection: Category::NAMES, selected: Category::NAMES.first %>
                   <%= f.submit "Ajouter", class: "btn btn-default" %>
                   <% end %>
                 </div>

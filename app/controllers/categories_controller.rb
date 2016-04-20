@@ -42,9 +42,17 @@ class CategoriesController < ApplicationController
   #   @post = Post.find(params[:post_id])
   # end
 
-  def set_category
-    @category = Category.find(params[:category_id])
-  end
+  # def set_category
+  #   @category = Category.find(params[:category_id])
+  # end
+
+    def set_category
+      if params[:id].present?
+        @category = Category.find(params[:id])
+      else
+        @category = Category.new
+      end
+    end
 
   #  def find_category
   #   @category = Category.find(params[:id])
