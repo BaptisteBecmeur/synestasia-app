@@ -9,9 +9,7 @@
                 <div class="mini-space">
                   <%= simple_form_for [@category] do |f| %>
                   <%= f.error_notification %>
-
-
-                  <%= f.input :name, collection: Category::NAMES, selected: Category::NAMES.first %>
+                  <%= f.input :name %>
                   <%= f.submit "Ajouter", class: "btn btn-default" %>
                   <% end %>
                 </div>

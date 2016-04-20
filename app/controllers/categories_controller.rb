@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-   before_action :set_category, only: [:show, :new, :create, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_action :find_category, only: [:show, :edit, :update, :destroy]
 
   def show
     @category = Category.find(params[:id])
@@ -10,11 +11,11 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = categories.new(category_params)
+    @category = Category.new(category_params)
     if @category.save
-      redirect_to @post
+      redirect_to @category
     else
-      render 'categories/show'
+      render :new
     end
   end
 
@@ -38,27 +39,13 @@ class CategoriesController < ApplicationController
   private
 
 
-  # def set_post
-  #   @post = Post.find(params[:post_id])
-  # end
-
-  # def set_category
-  #   @category = Category.find(params[:category_id])
-  # end
-
-    def set_category
-      if params[:id].present?
-        @category = Category.find(params[:id])
-      else
-        @category = Category.new
-      end
-    end
-
-  #  def find_category
-  #   @category = Category.find(params[:id])
-  # end
+   def find_category
+    @category = Category.find(params[:id])
+  end
 
   def category_params
     params.require(:category).permit(:name, :description)
   end
 end
+
+

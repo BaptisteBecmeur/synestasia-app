@@ -11,11 +11,7 @@
 
     <%= link_to post_path(post) do %>
 
-    <span class="card-post-category">
-      <% post.post_categories.each do |post_category| %>
-        <%= post_category.name %>
-      <% end %>
-    </span>
+
 
     <span class="card-post-tag card-post-tag-<%= post.tag.downcase %>"><%= post.tag %>
     </span>

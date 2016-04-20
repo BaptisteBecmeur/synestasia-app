@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
-  before_filter :authenticate_user!, except: [:index, :show]
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -20,17 +19,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    # if current_user and current_user.admin?
-     @post = current_user.posts.new(post_params)
-      #@post = current_user.posts.new(post_params)
-      if @post.save
-        redirect_to @post
-      else
-        render :new
-      end
-    # else
-    #   render 'shared/404.html.erb'
-    # end
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to @post
+    else
+      render :new
+    end
   end
 
   def edit
@@ -51,15 +45,13 @@ class PostsController < ApplicationController
 
   private
 
-  def find_post
+  def set_post
     @post = Post.find(params[:id])
   end
-
-  # def set_category
-  #   @post_category = Category.find(params[:category_id])
-  # end
 
   def post_params
     params.require(:post).permit(:title, :subtitle, :introduction, :body, :cover, :tag, :category_id)
   end
 end
+
+
