@@ -17,7 +17,7 @@ class SymbolesController < ApplicationController
       @symboles = @symboles.kanas
     when "kanjis"
       @symboles = @symboles.kanjis
-    end    
+    end
     render "index"
   end
 

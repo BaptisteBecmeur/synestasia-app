@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def create
     # if current_user and current_user.admin?
-     @post = @post_category.posts.new(post_params)
+     @post = current_user.posts.new(post_params)
       #@post = current_user.posts.new(post_params)
       if @post.save
         redirect_to @post
@@ -51,16 +51,15 @@ class PostsController < ApplicationController
 
   private
 
-  # def find_post
-  #   @post = Post.find(params[:id])
-  # end
-
-  def set_post_category
-    @post_category = PostCategory.find(params[:post_category_id])
+  def find_post
+    @post = Post.find(params[:id])
   end
 
-  def post_params
-    params.require(:post).permit(:title, :subtitle, :introduction, :body, :cover, :tag, :post_category_id)
+  # def set_category
+  #   @post_category = Category.find(params[:category_id])
+  # end
 
+  def post_params
+    params.require(:post).permit(:title, :subtitle, :introduction, :body, :cover, :tag, :)
   end
 end
