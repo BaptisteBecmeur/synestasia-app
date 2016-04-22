@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414085202) do
+ActiveRecord::Schema.define(version: 20160420093915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "kana_attributes", force: :cascade do |t|
     t.integer  "symbole_id"
@@ -33,6 +40,25 @@ ActiveRecord::Schema.define(version: 20160414085202) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "cover"
+    t.string   "subtitle"
+    t.string   "title"
+    t.text     "introduction"
+    t.text     "body"
+    t.text     "conclusion"
+    t.string   "tag"
+    t.string   "source"
+    t.string   "link"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "category_id"
+  end
+
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -100,4 +126,6 @@ ActiveRecord::Schema.define(version: 20160414085202) do
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
+  add_foreign_key "posts", "categories"
+  add_foreign_key "posts", "users"
 end
