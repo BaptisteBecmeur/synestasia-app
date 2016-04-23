@@ -3,16 +3,19 @@
 
   <div class="card-details">
 
-    <% if current_user.try(:admin?) %>
       <%= link_to post_path(post), class:'trash-article', data: { confirm: 'Are you sure?' }, method: :delete do %>
       <%= image_tag("delete-btn.png") %>
-      <% end %>
+
     <% end %>
 
     <%= link_to post_path(post) do %>
 
-
-    <span class="card-post-tag card-post-tag-<%= post.tag %>"><%= post.tag %></span>
+    <span class="card-post-category">
+      <%= post.category.name %>
+    </span>
+    <span class="card-post-tag card-post-tag-<%= post.tag.downcase %>">
+      <%= post.tag %>
+    </span>
     <h4><%= post.title %></h4>
 
 
