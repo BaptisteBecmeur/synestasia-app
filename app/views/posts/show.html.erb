@@ -10,11 +10,11 @@
           <%= cl_image_tag @post.cover, :crop => :fill, class: "img-post-header" %>
           <div class="col-md-8 col-md-offset-2">
             <div class="article">
-              <!-- <div class="tags tags-<%= @post.tag.downcase %>">
+              <div class="tags tags-<%= @post.tag.downcase %>">
                 <%= @post.tag %>
-              </div> -->
+              </div>
 
-              <p><%= post.category.name %></p>
+              <div class="category-tab"><%= @post.category.name %></div>
 
               </div>
               <div class="intro-part">
@@ -26,7 +26,6 @@
               <div class="content-part">
                 <p><%= @post.body %></p>
               </div>
-
 
 
                   <div class="text-center buttons-view-post">

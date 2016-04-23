@@ -4,7 +4,8 @@
       <%= simple_form_for @post do |f| %>
       <%= f.error_notification %>
       <%= f.input :title, label: 'Title', input_html: { class: "input-lg"} %>
-      <%= f.association :category %>
+      <%= f.association :category, placeholder: "choissisez un pays" %>
+      <%= f.input :tag %>
     <div class="row">
       <div class="col-sm-6">
         <%= f.input :cover %>
