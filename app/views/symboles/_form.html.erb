@@ -1,15 +1,17 @@
-<div class= " col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-  <%= simple_form_for(@symbole) do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-    	<%= f.select :lang, options_for_select([["Japonais", "jp"], ["Chinois", "cn"]]), {:prompt => "Langue"}%>
+<div class="row">
+  <div class= " col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 form-symboles">
+    <%= simple_form_for(@symbole) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+      	<%= f.select :lang, options_for_select([["Japonais", "jp"], ["Chinois", "cn"]]), {:prompt => "Langue"}%>
+      </div>
+    <% end %>
+
+    <div id="lang_form">
     </div>
-  <% end %>
 
-  <div id="lang_form">
+      <%= link_to 'Back', symboles_path, class: "btn btn-default" %>
   </div>
-
-    <%= link_to 'Back', symboles_path, class: "btn btn-default" %>
 </div>
 
 
