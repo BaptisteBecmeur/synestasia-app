@@ -3,14 +3,14 @@
 
   <div class="card-details">
 
-      <%= link_to post_path(post), class:'trash-article', data: { confirm: 'Are you sure?' }, method: :delete do %>
-      <%= image_tag("delete-btn.png") %>
+    <%= link_to post_path(post), class:'trash-article', data: { confirm: 'Are you sure?' }, method: :delete do %>
+    <%= image_tag("delete-btn.png") %>
 
     <% end %>
 
-    <%= link_to post_path(post) do %>
+      <%= link_to post_path(post) do %>
 
-    <span class="card-post-category">
+    <span class="card-post-category card-post-category-<%= post.category.name.downcase%>">
       <%= post.category.name %>
     </span>
     <span class="card-post-tag card-post-tag-<%= post.tag.downcase %>">
@@ -18,7 +18,6 @@
     </span>
     <h4><%= post.title %></h4>
 
-
-    <% end %>
+  <% end %>
 </div>
 

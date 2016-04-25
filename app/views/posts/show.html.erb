@@ -14,7 +14,7 @@
                 <%= @post.tag %>
               </div>
 
-              <div class="category-tab"><%= @post.category.name %></div>
+              <div class="category-tab category-tab-<%= @post.category.name.downcase %>"><%= @post.category.name %></div>
 
               </div>
               <div class="intro-part">
@@ -27,12 +27,11 @@
                 <p><%= @post.body %></p>
               </div>
 
+              <div class="text-center buttons-view-post">
+                <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-default btn-md" %>
+                <%= link_to "Créer un article", new_post_path, class: "btn btn-default btn-md" %>
 
-                  <div class="text-center buttons-view-post">
-                    <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-default btn-md" %>
-                    <%= link_to "Créer un article", new_post_path, class: "btn btn-default btn-md" %>
-
-                    <%= link_to "Voir tous les articles", posts_path, class: "btn btn-default btn-md" %>
+                <%= link_to "Voir tous les articles", posts_path, class: "btn btn-default btn-md" %>
                 </div>
               </div>
             </div>
