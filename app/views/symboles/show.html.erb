@@ -39,9 +39,10 @@
                   <% end %>
                 </div>
 
-                <div class="card-hiragana ">
+                <div class="card-hiragana fr-<%=@symbole.fr.downcase.last%>">
                   <h1><b><%= @symbole.hiragana_value  %></b></h1>
                 </div>
+
                 <div class="card-katakana">
                   <p><%= @symbole.hiragana_value  %></p>
                 </div>
@@ -49,8 +50,8 @@
               </div>
 
               <div class="back">
-                <div class="col-sm-3 col-xs-4 col-md-3">
-                    <div class="backcard-hiragana">
+                <div class="col-sm-3 col-xs-4 col-md-3 containerbackcards-<%=@symbole.fr.downcase.last%>">
+                    <div class="backcard-symbole">
                       <h1><b><%= @symbole.hiragana_value  %></b></h1>
                     </div>
                     <div class="card-bigletter">

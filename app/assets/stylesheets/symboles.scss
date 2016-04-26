@@ -27,3 +27,144 @@
 
 // Symboles Show
 
+// Card hiragana FRONT
+
+  .card-hiragana h1 {
+    padding-top:40px;
+    padding-bottom:10px;
+    font-size: 150px;
+
+    h1:hover {
+      color: grey;
+    }
+  }
+
+// hiragana A couleur verte
+    .fr-a {
+      color: black;
+
+    h1:hover {
+      color: $green;
+      cursor: default;
+    }
+  }
+
+  // hiragana E couleur rouge
+    .fr-e {
+      color: black;
+
+    h1:hover {
+      color: $red;
+      cursor: default;
+    }
+  }
+
+// hiragana I couleur orange
+    .fr-i {
+      color: black;
+
+    h1:hover {
+      color: $pink;
+      cursor: default;
+    }
+  }
+
+  // hiragana U couleur violet
+    .fr-u {
+      color: black;
+
+    h1:hover {
+      color: $purple;
+      cursor: default;
+    }
+  }
+
+// hiragana O couleur bleu
+    .fr-o {
+      color: black;
+
+    h1:hover {
+      color: $blue;
+      cursor: default;
+    }
+  }
+
+// card katakana FRONT
+
+  .card-katakana {
+      color: black;
+      font-size: 40px
+    }
+
+// BACK card
+
+  .back {
+
+    h4 {
+      color: white;
+    }
+
+    .backcard-symbole h1 {
+      padding-top:40px;
+      padding-bottom:10px;
+      font-size: 150px;
+      color: white;
+    }
+
+// background A couleur verte
+  .containerbackcards-a {
+    border-radius: 6px;
+    height: 320px;
+    width: 200px;
+    overflow: visible;
+    background-color: $green;
+  }
+
+// background E couleur rouge
+  .containerbackcards-e {
+    position: relative;
+    border-radius: 6px;
+    height: 320px;
+    width: 200px;
+    overflow: visible;
+    background-color: $red;
+  }
+
+// background I couleur orange
+    .containerbackcards-i {
+      position: relative;
+      border-radius: 6px;
+      height: 320px;
+      width: 200px;
+      overflow: visible;
+      background-color: $pink;
+    }
+
+// background U couleur violette
+    .containerbackcards-u {
+      position: relative;
+      border-radius: 6px;
+      height: 320px;
+      width: 200px;
+      overflow: visible;
+      background-color: $purple;
+    }
+
+// background O couleur bleue
+    .containerbackcards-o {
+      position: relative;
+      border-radius: 6px;
+      height: 320px;
+      width: 200px;
+      overflow: visible;
+      background-color: $blue;
+    }
+
+     .card-bigletter {
+      color: white;
+      font-size: 30px
+    }
+  }
+
+
+
