@@ -10,14 +10,17 @@ class FavoritesController < ApplicationController
   # end
 
   def create
-     @hiragana = Hiragana.find(params[:hiragana_id])
-    @favorite = current_user.favoritess.where(hiragana: @hiragana).first
+    #Favorite.create(user_id: User.last.id, favoritable_id: Symbole.last.id, favoritable_type:"Symbole")
+    @symbole = Symbole.find(params[:symbole_id])
+    @sentence = Sentence.find(params[:sentence_id])
+    @favorite = current_user.favorites.where(symbole: @symbole, sentence: @sentence).first
     if @favorite.present?
-      @favorite.destroy
+       @favorite.destroy
     else
-      @favorite = current_user.favorites.new(hiragana: @hiragana)
-      if not @hiragana.favorites.where(user: current_user).take
-        @favorite.save
+      @favorite = current_user.favorites.new(symbole: @symbole, sentence: @sentence)
+      if not @symbole.favorites.where(user: current_user).take
+          @sentence.favorites.where(user: current_user).take
+          @favorite.save
       end
     end
     # redirect_to favs_path
