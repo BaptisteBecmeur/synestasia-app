@@ -22,6 +22,12 @@ Rails.application.routes.draw do
     post 'load_select_tag' , on: :collection
   end
 
+  resources :teacher_requests do 
+    get 'validate', to: "teacher_requests#validate_teacher_request"
+    get 'refuse', to: "teacher_requests#refuse_teacher_request"
+    get 'cancel', to: "teacher_requests#cancel_teacher_request"
+  end
+
   # Posts as articles from blog
   # resources :posts
 

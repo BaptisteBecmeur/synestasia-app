@@ -28,7 +28,10 @@ Authority.configure do |config|
      :create  => 'create',
      :edit    => 'update',
      :update  => 'update',
-     :destroy => 'delete'
+     :destroy => 'delete',
+     :validate_teacher_request => 'manage_request',
+     :cancel_teacher_request => 'manage_request',
+     :refuse_teacher_request => 'manage_request'
    }
 
   # ABILITIES
@@ -43,7 +46,8 @@ Authority.configure do |config|
      :create => 'creatable',
      :read   => 'readable',
      :update => 'updatable',
-     :delete => 'deletable'
+     :delete => 'deletable',
+     :manage_request => 'manageable_request'
    }
 
   # LOGGER

@@ -1,0 +1,29 @@
+ <table class="table table-striped">
+    <thead>
+      <tr>
+          <th>Id</th>
+          <th>User</th>
+          <th>Status</th>
+          <th>Action(s)</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @teacher_requests.each do |request| %>
+      	<tr>
+	      	<td><%= request.id %></td>
+	      	<td><%= request.user.email %></td>
+	      	<td><%= request.status %></td>
+	      	<td>
+	      		<% if request.status == "validating" %>
+		      		<%= link_to "Accepter", teacher_request_validate_path(teacher_request_id: request.id), :data => {:confirm => 'Are you sure?'} %>
+		      		<%= link_to "Refuser", teacher_request_refuse_path(teacher_request_id: request.id), :data => {:confirm => 'Are you sure?'} %>
+		      	<% elsif  request.status == "validated"%>
+	      		<%= link_to "Annuler", teacher_request_cancel_path(teacher_request_id: request.id), :data => {:confirm => 'Are you sure?'}%>
+	      		<% end %>
+	      	</td>
+	    </tr>
+      <% end %>
+    </tbody>
+  </table>

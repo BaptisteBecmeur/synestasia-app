@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   rolify
 
 
-  # posts migration
+  # relations
   has_many :posts, dependent: :destroy
-
+  has_many :teacher_requests
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
+  end
+
+  def last_teacher_request
+    teacher_requests.try(:last)
   end
 
 end
