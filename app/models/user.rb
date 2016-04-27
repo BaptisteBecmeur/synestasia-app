@@ -1,4 +1,13 @@
 class User < ActiveRecord::Base
+
+  include Authority::UserAbilities
+  rolify
+
+
+  # relations
+  has_many :posts, dependent: :destroy
+  has_many :teacher_requests
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,6 +26,10 @@ class User < ActiveRecord::Base
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
+  end
+
+  def last_teacher_request
+    teacher_requests.try(:last)
   end
 
 end

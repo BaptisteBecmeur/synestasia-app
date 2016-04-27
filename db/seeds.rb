@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+if User.with_role(:admin).empty?
+	admin = User.create!(email: "admin@synestasia.com", password: "aisatsenys", first_name:"admin", last_name: "admin")
+	admin.add_role :admin
+end

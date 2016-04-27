@@ -10,17 +10,41 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :symboles do 
+  resources :symboles do
     get 'japonais(/:type)', to: "symboles#japonais" , on: :collection
     post 'load_form' , on: :collection
     post 'load_attributes_form' , on: :collection
   end
 
-  resources :sentences do 
+  resources :sentences do
     get 'japonais(/:type)', to: "symboles#japonais" , on: :collection
     post 'load_form' , on: :collection
     post 'load_select_tag' , on: :collection
   end
+
+  resources :teacher_requests do 
+    get 'validate', to: "teacher_requests#validate_teacher_request"
+    get 'refuse', to: "teacher_requests#refuse_teacher_request"
+    get 'cancel', to: "teacher_requests#cancel_teacher_request"
+  end
+
+  # Posts as articles from blog
+  # resources :posts
+
+  resources :categories
+  resources :posts
+
+
+
+
+
+  # get 'post_categories/index'
+  # get 'post_categories/show'
+  # get 'post_categories/new'
+  # get 'post_categories/create'
+  # get 'post_categories/edit'
+  # get 'post_categories/update'
+  # get 'post_categories/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

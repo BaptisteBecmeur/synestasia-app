@@ -1,4 +1,5 @@
 class Sentence < ActiveRecord::Base
+	include Authority::Abilities
 
 
 	## relations ###############

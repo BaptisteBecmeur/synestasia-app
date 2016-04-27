@@ -1,0 +1,363 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-formpost {
+  background-color: #f2f2f2;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+
+  .form-post {
+    background-color: #fff;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+#show-post {
+  .container-post {
+    padding: 0px;
+
+    .headline {
+      background: rgba(0,0,0,0.3);
+      // position: absolute;
+      // // top: -180px;
+      text-align: center;
+      padding: 5px 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight:400;
+      font-size: 35px;
+      color: #fff;
+      text-shadow: 1px 1px #000;
+
+      // Color attribute to tag
+       &-design {
+        background-color: $green;
+      }
+
+       &-mode {
+        background-color: $blue;
+      }
+
+       &-life-style {
+        background-color: $orange;
+      }
+
+      &-mode {
+        background-color: $red;
+      }
+
+       &-tendance {
+        background-color: $yellow;
+      }
+
+       &-tradition {
+        background-color: $yellow;
+      }
+
+      &-gastronomie {
+        background-color: $yellow;
+      }
+
+      &-insolite {
+        background-color: $yellow;
+      }
+
+      &-technologie {
+        background-color: $yellow;
+      }
+    }
+
+    .img-post-header {
+      width: 100%;
+      background-size: cover;
+    }
+
+    .subtitle {
+      position: absolute;
+      color: rgba(255,255,255,0.5);
+      font-size: 20vw;
+      padding-top: 76px;
+    }
+  }
+
+// View Article
+
+  .article {
+    background: white;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    // margin-top: -70px;
+    z-index: 10;
+    position: relative;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+
+    .category-tab {
+      position: absolute;
+      top: -14px;
+      left: 15px;
+      background: #F400A1;
+      display: inline-block;
+      padding: 0 4px;
+      color: white;
+    }
+
+    .tags {
+      position: absolute;
+      top: -14px;
+      left: 74px;
+      background: #E22;
+      display: inline-block;
+      padding: 0 4px;
+      color: white;
+
+     // Color attribute to tag
+       &-design {
+        background-color: $green;
+      }
+
+       &-mode {
+        background-color: $blue;
+      }
+
+       &-life-style {
+        background-color: $orange;
+      }
+
+      &-mode {
+        background-color: $red;
+      }
+
+       &-tendance {
+        background-color: $yellow;
+      }
+
+       &-tradition {
+        background-color: $yellow;
+      }
+
+      &-gastronomie {
+        background-color: $yellow;
+      }
+
+      &-insolite {
+        background-color: $yellow;
+      }
+
+      &-technologie {
+        background-color: $yellow;
+      }
+    }
+  }
+
+  .buttons-view-post{
+    margin-top: 40px;
+    margin-bottom:30px;
+  }
+
+  .picture-post {
+    text-align: -webkit-center;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 34px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  h5 {
+    font-size: 20px;
+    padding-top: 30px;
+  }
+
+  h6 {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    font-weight: 300;
+  }
+
+  p {
+    font-weight: 100;
+    margin: 0 0 11px;
+    line-height:29px;
+  }
+
+  h1, h2, h3, h4, h5, h6, p .h1, .h2, .h3, .h4, .h5, .h6 .p {
+    font-family: "Avenir", "Helvetica", "sans-serif";
+    line-height: 1.1;
+  }
+
+  .card-filter-home a:hover {
+    text-decoration:none;
+  }
+}
+
+// Blog Index Posts
+
+#home-articles {
+  margin-bottom: 50px;
+
+  ul {
+    list-style: none;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+
+    li { position: relative; }
+  }
+
+  .container-cards {
+    position: relative;
+    padding: 20px 0;
+    height: 240px;
+    overflow: hidden;
+
+    // .card-fav {
+    //   position: absolute;
+    //   right: 40px;
+    //   bottom: 25px;
+    // }
+
+    .card-post-author {
+      color: white;
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .card-post-tag {
+      color:white;
+      text-transform: capitalise;
+      position: absolute;
+      top: 10px;
+      left: 79px;
+      background: #E22;
+      display: inline-block;
+      padding: 0 4px;
+      color: white;
+
+      // Color attribute to tag
+       &-design {
+        background-color: $green;
+      }
+
+       &-mode {
+        background-color: $blue;
+      }
+
+       &-life-style {
+        background-color: $orange;
+      }
+
+      &-mode {
+        background-color: $red;
+      }
+
+       &-tendance {
+        background-color: $yellow;
+      }
+
+       &-tradition {
+        background-color: $yellow;
+      }
+
+      &-gastronomie {
+        background-color: $yellow;
+      }
+
+      &-insolite {
+        background-color: $yellow;
+      }
+
+      &-technologie {
+        background-color: $yellow;
+      }
+    }
+
+    .card-post-category {
+      color:white;
+      text-transform: capitalise;
+      position: absolute;
+      top: 10px;
+      left: 26px;
+      background: #FE28A2;
+      display: inline-block;
+      padding: 0 4px;
+      color: white;
+    }
+
+    a { text-decoration: none; }
+
+    .card-filter-home {
+      position: relative;
+      height: 220px;
+      margin: 0 10px;
+      overflow: hidden;
+      border-radius: 5px;
+
+      a {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.4);
+      }
+    }
+
+    .card-details {
+      position: absolute;
+      padding: 20px 40px;
+      top: 0;
+      padding: 20px 40px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+
+      h4 {
+        color: white;
+        padding-top: 40px;
+        font-family: "Avenir", "Helvetica", "sans-serif";
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.trash-article {
+  position: absolute;
+  top: 7px;
+  left: 0px;
+
+  img {
+    width:20px;
+    height:20px;
+  }
+}
+
+
