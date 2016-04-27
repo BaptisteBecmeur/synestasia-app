@@ -8,7 +8,9 @@ class Symbole < ActiveRecord::Base
 		has_one :kanji_attribute, :class_name => "KanjiAttribute", :foreign_key => "symbole_id", dependent: :destroy
 		accepts_nested_attributes_for :kanji_attribute, :allow_destroy => true
 		has_many :sentence_symboles, :class_name => "SentenceSymbole", :foreign_key => "symbole_id"
+    has_many :favorites, as: :favoritable
 	## relations ###############
+
 
 
   ## uploaders Cloudinary #############

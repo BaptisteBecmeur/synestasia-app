@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423194026) do
+ActiveRecord::Schema.define(version: 20160427083614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20160423194026) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "favoritable_id"
+    t.string   "favoritable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "kana_attributes", force: :cascade do |t|

@@ -29,6 +29,82 @@
 
 // Card hiragana FRONT
 
+// Front section
+
+.front{
+  border-radius: 6px;
+  background-color: white;
+
+// Favorite as heart
+   .hiragana-fav {
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+    }
+
+// H4 font-size in popover
+
+  h4 {
+    font-size: 30px;
+  }
+
+// Features top FRONT card
+
+     // oeil
+    .card-question {
+      top: 10px;
+      right: 10px;
+      display: inline-block;
+      color: red;
+      position: absolute;
+      // text-shadow: 2px 1px #686868;
+      cursor: pointer;
+    }
+
+     // volume on
+    .audioclick {
+      top: 10px;
+      right: 41px;
+      display: inline-block;
+      color: red;
+      position: absolute;
+      // text-shadow: 2px 1px #686868;
+      cursor: pointer;
+
+      .fa-volume-up {
+        color: red;
+      }
+    }
+
+   // lightbulb
+   .idea {
+      top: 10px;
+      right: 71px;
+      display: inline-block;
+      color: red;
+      position: absolute;
+      // text-shadow: 2px 1px #686868;
+      cursor: pointer;
+    }
+
+     .cursor-stop {
+        cursor: not-allowed
+      }
+
+    // // bubble
+    // .prononciation {
+    //   top: 10px;
+    //   right: 70px;
+    //   display: inline-block;
+    //   color: red;
+    //   position: absolute;
+    //   text-shadow: 2px 2px #686868;
+    //   cursor: pointer;
+    // }
+  }
+
+  // Ajouter un coeur pour favori ??
+
   .card-hiragana h1 {
     padding-top:40px;
     padding-bottom:10px;
