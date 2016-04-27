@@ -1,0 +1,46 @@
+<div id="show-post">
+  <div class="container-post">
+    <div class ="headline headline-<%= @post.tag.downcase %>">
+      <%= @post.title %>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="text-center ">
+        </div>
+          <%= cl_image_tag @post.cover, :crop => :fill, class: "img-post-header" %>
+          <div class="col-md-8 col-md-offset-2">
+            <div class="article">
+              <!-- <div class="tags tags-<%= @post.tag.downcase %>">
+                <%= @post.tag %>
+              </div> -->
+
+              <p><%= post.category.name %></p>
+
+              </div>
+              <div class="intro-part">
+                <h5>
+                  <strong>
+                    <%= @post.introduction %>
+                  </strong>
+                </h5>
+              <div class="content-part">
+                <p><%= @post.body %></p>
+              </div>
+
+
+
+                  <div class="text-center buttons-view-post">
+                    <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-default btn-md" %>
+                    <%= link_to "Créer un article", new_post_path, class: "btn btn-default btn-md" %>
+
+                    <%= link_to "Voir tous les articles", posts_path, class: "btn btn-default btn-md" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,26 @@
+<div class="card-filter-home" style="background: url(<%= cloudinary_url post.cover %>); background-size:cover">
+</div>
+
+  <div class="card-details">
+
+
+      <%= link_to post_path(post), class:'trash-article', data: { confirm: 'Are you sure?' }, method: :delete do %>
+      <%= image_tag("delete-btn.png") %>
+
+    <% end %>
+
+    <%= link_to post_path(post) do %>
+
+
+
+    <span class="card-post-tag card-post-tag-<%= post.tag.downcase %>"><%= post.tag %>
+    </span>
+
+    <h4>
+      <%= post.title %>
+    </h4>
+
+    <% end %>
+</div>
+
+

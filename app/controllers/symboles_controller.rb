@@ -1,6 +1,6 @@
 class SymbolesController < ApplicationController
+  authorize_actions_for Symbole, except:[:load_form, :load_attributes_form]
   before_action :set_symbole, only: [:show, :edit, :update, :destroy, :load_form, :load_attributes_form]
-
   # GET /symboles
   # GET /symboles.json
   def index
@@ -17,7 +17,7 @@ class SymbolesController < ApplicationController
       @symboles = @symboles.kanas
     when "kanjis"
       @symboles = @symboles.kanjis
-    end    
+    end
     render "index"
   end
 
