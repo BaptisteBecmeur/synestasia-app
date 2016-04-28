@@ -18,7 +18,31 @@
     <hr class="hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
+      <% if current_user.has_role? :admin %>
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <span class="dropdown" data-toggle="dropdown">Admin</span>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
 
+              <li>
+                <%= link_to teacher_requests_path do %>
+                  <i class="fa fa-user"></i> <%= t ".teacher_requests", default: "Teacher Requests" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-user"></i> etc...
+                <% end %>
+              </li>
+              <!--<li>
+                <%#= link_to users_path do %>
+                  <i class="fa fa-user"></i> <%#= t ".users", default: "Users" %>
+                <%# end %>
+              </li>-->
+            </ul>
+          </div>
+        </div>
+      <% end %>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag current_user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
