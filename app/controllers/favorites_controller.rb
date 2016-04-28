@@ -11,9 +11,9 @@ class FavoritesController < ApplicationController
 
   def create
     #Favorite.create(user_id: User.last.id, favoritable_id: Symbole.last.id, favoritable_type:"Symbole")
-    @symbole = Symbole.find(params[:symbole_id])
-    @sentence = Sentence.find(params[:sentence_id])
-    @favorite = current_user.favorites.where(symbole: @symbole, sentence: @sentence).first
+    # @symbole = Symbole.find(params[:symbole_id])
+    # @sentence = Sentence.find(params[:sentence_id])
+    @favorite = current_user.favoritable.favorites.create(symbole: @symbole, sentence: @sentence).first
     if @favorite.present?
        @favorite.destroy
     else
