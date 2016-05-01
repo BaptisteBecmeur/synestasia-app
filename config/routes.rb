@@ -1,18 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'favorites/index'
-
-  get 'favorites/show'
-
-  get 'favorites/new'
-
-  get 'favorites/create'
-
-  get 'favorites/edit'
-
-  get 'favorites/update'
-
-  get 'favorites/destroy'
+  resources :favorites
 
   root to: 'pages#home'
 
@@ -37,12 +25,14 @@ Rails.application.routes.draw do
   end
 
   # Posts as articles from blog
-  # resources :posts
-
   resources :categories
   resources :posts
 
+  # post 'favs/:hiragana_id', to: 'favs#create', as: "hiragana_favs"
+  # get 'favs', to: 'favs#index'
+  # delete 'favs/:hiragana_id', to: 'favs#destroy'
 
+end
 
 
 
@@ -108,4 +98,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

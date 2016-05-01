@@ -15,7 +15,9 @@
 
     <% if user_signed_in? %>
 
-    <i class="fa fa-th" aria-hidden="true"></i>
+    <%= link_to root_path do %>
+      <i class="fa fa-th" aria-hidden="true"></i>
+  <% end %>
 
       <div class="navbar-wagon-item">
         <div class="dropdown">

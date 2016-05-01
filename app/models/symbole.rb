@@ -75,4 +75,11 @@ class Symbole < ActiveRecord::Base
 	## accessors ###############
 
 
+  ## favorite method ##############
+  def is_faved_by(user)
+    self.favorites.where(user: user).take
+  end
+  ## favorite method ##############
+
+
 end
