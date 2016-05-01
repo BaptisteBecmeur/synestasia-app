@@ -1,25 +1,52 @@
 <!-- <p id="notice"><%= notice %></p> -->
+<div class="container-formpost">
+  <div class="container">
+    <h1 class="text-center"><span class="inset-symbole">Listing Symboles</span></h1>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <ul class="list-unstyled list-inline text-center">
+            <li>
+              <%= link_to new_symbole_path do %>
+                <div class="black-button iteration-separator">
+                  <h5>Create a new symbole</h5>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
 
-<h1>Listing Symboles</h1>
+      <ul class=" list-unstyled list-inline text-center">
+        <% @symboles.each do |symbole| %>
+          <li class="col-md-3" >
+            <%= render 'allsymboles', symbole: symbole %>
+            <%= link_to 'Show', symbole %>
+            <%= link_to 'Edit', edit_symbole_path(symbole) %>
+           <%= link_to 'Destroy', symbole, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </li>
+        <% end %>
+      </ul>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+   <!--  <table>
+      <thead>
+        <tr>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @symboles.each do |symbole| %>
-      <tr>
-        <td><%= link_to 'Show', symbole %></td>
-        <td><%= link_to 'Edit', edit_symbole_path(symbole) %></td>
-        <td><%= link_to 'Destroy', symbole, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @symboles.each do |symbole| %>
+          <tr>
+            <td><%= link_to 'Show', symbole %></td>
+            <td><%= link_to 'Edit', edit_symbole_path(symbole) %></td>
+            <td><%= link_to 'Destroy', symbole, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<br>
+    <br> -->
 
-<%= link_to 'New Symbole', new_symbole_path %>
+    <%= link_to 'New Symbole', new_symbole_path %>
+  </div>
+</div>

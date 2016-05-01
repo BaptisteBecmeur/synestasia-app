@@ -12,7 +12,6 @@ class Symbole < ActiveRecord::Base
 	## relations ###############
 
 
-
   ## uploaders Cloudinary #############
       mount_uploader :upload, ImageUploader
       mount_uploader :sound, SoundUploader

@@ -1,0 +1,67 @@
+<div class="row">
+  <ul class="list-inline text-center card-frame">
+    <li>
+      <div class="card">
+        <div class="front">
+          <!-- PARAMETRER LE RESPONSIVE BOOTSTRAP -->
+          <!-- <div class="col-sm- col-xs-4 col-md-3"> -->
+
+          <%= link_to symbole_path(symbole), method: :delete, class:'trash-card', data: { confirm: 'Are you sure?' } do %>
+          <%= image_tag("delete-btn.png") %>
+          <% end %>
+
+
+          <span class="card-question popover-word">
+            <i class="fa fa-eye fa-lg"></i>
+          </span>
+
+          <div class="audioclick">
+            <% if symbole.sound.blank? %>
+              <i class="fa fa-volume-up cursor-stop fa-lg"></i>
+            <% else %>
+            <a onclick="h=function(event) { event.preventDefault(); $('#audio_<%= symbole.id%>')[0].play();}; h(event)"><i class="fa fa-volume-up fa-lg"></i></a>
+            <audio id="audio_<%= symbole.id%>">
+            <source src="<%=symbole.sound%>" type="audio/mp3">
+              Your browser does not support the video tag.
+            </audio>
+              <% end %>
+          </div>
+            <!-- <div class="prononciation">
+              <i class="fa fa-comment"></i>
+            </div> -->
+          <div class="idea">
+            <% if symbole.upload.blank? %>
+              <i class="fa fa-lightbulb-o cursor-stop fa-lg"></i>
+            <% else %>
+            <span class="">
+              <i class="fa fa-lightbulb-o fa-lg"></i>
+            </span>
+              <% end %>
+            </div>
+
+            <div class="card-hiragana fr-<%=symbole.fr.downcase.last%>">
+              <h1><b><%= symbole.hiragana_value  %></b></h1>
+            </div>
+
+            <div class="card-katakana">
+              <p><%= symbole.hiragana_value  %></p>
+            </div>
+                <!-- </div> -->
+            </div>
+
+          <div class="back">
+            <div class="col-sm-3 col-xs-4 col-md-3 containerbackcards-<%=symbole.fr.downcase.last%>">
+            <div class="backcard-symbole">
+              <h1><b><%= symbole.hiragana_value  %></b></h1>
+            </div>
+            <div class="card-bigletter">
+              <p><%= symbole.fr  %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+

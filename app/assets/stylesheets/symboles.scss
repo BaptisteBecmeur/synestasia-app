@@ -18,6 +18,14 @@
   }
 }
 
+// Title Underlined
+.inset-symbole {
+  font-size: 30px;
+  box-shadow: inset 0 -10px 0 rgba(242, 203, 201, 1);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
 .save-btn {
     width: 100%;
     text-decoration: none;
@@ -241,6 +249,17 @@
       font-size: 30px
     }
   }
+
+.trash-card {
+  position: absolute;
+  top: -8px;
+  left: -6px;
+
+  img {
+    width:20px;
+    height:20px;
+  }
+}
 
 
 
