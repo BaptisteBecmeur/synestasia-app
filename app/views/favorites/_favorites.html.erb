@@ -1,12 +1,12 @@
 <% if current_user %>
   <div class="hiragana-fav">
-    <% if hiragana.is_faved_by(current_user) %>
+    <% if symbole.is_faved_by(current_user) %>
       <%= link_to "#" do %>
-        <i class="fa fa-heart faved faved-on" id ="<%=hiragana.id%>"></i>
+        <i class="fa fa-heart faved faved-on" id ="<%=symbole.id%>"></i>
       <% end %>
     <% else %>
       <%= link_to "#" do %>
-        <i class="fa fa-heart faved faved-off" id ="<%=hiragana.id%>"></i>
+        <i class="fa fa-heart faved faved-off" id ="<%=symbole.id%>"></i>
       <% end %>
     <% end  %>
   </div>

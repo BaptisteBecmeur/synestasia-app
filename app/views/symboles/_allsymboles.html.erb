@@ -46,7 +46,14 @@
             <div class="card-katakana">
               <p><%= symbole.hiragana_value  %></p>
             </div>
-                <!-- </div> -->
+
+            <!-- </div> Favorites -->
+            <div id="favorite_<%=symbole.id%>">
+              <%= render 'favorites/favorites', symbole: symbole %>
+            </div>
+
+            <!-- Favorites -->
+
             </div>
 
           <div class="back">

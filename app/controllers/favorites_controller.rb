@@ -5,21 +5,20 @@ class FavoritesController < ApplicationController
 
   def create
     #Favorite.create(user_id: User.last.id, favoritable_id: Symbole.last.id, favoritable_type:"Symbole")
-    @favoritable = find_favoritable
-    @favorite = @favoritable.favorites.build(favorite_params)
+    #@favoritable = find_favoritable
+    @favorite = current_user.favorites.create(favorite_params)
 
     if @favorite.save
-      flash[:notice] = "Successfully created comment."
-    redirect_to :id => nil
-  else
-    render :action => 'new'
-  end
+      flash[:notice] = "Successfully favorited"
+      redirect_to :id => nil
+    else
+      render :new
+    end
 
     respond_to do |format|
       format.js { render :ajax_update_favorites }
     end
   end
-
 
 
   def destroy
