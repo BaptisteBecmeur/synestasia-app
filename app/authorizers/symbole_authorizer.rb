@@ -1,5 +1,5 @@
 class SymboleAuthorizer < ApplicationAuthorizer
-  
+
   def self.creatable_by?(user)
     (user.present? and user.has_any_role?(:admin, :teacher))
   end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   root to: 'pages#home'
 
   get 'synestesie', to: 'pages#synestesie'
@@ -29,12 +31,14 @@ Rails.application.routes.draw do
   end
 
   # Posts as articles from blog
-  # resources :posts
-
   resources :categories
   resources :posts
 
+  post 'favorites/:favoritable_id', to: 'favorites#create', as: "create_favorite"
+  get 'favorites', to: 'favorites#index'
+  delete 'favorites/:favoritable_id', to: 'favorites#destroy', as: "destroy_favorite"
 
+end
 
 
 
@@ -100,4 +104,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

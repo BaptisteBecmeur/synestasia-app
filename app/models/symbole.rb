@@ -8,14 +8,21 @@ class Symbole < ActiveRecord::Base
 		has_one :kanji_attribute, :class_name => "KanjiAttribute", :foreign_key => "symbole_id", dependent: :destroy
 		accepts_nested_attributes_for :kanji_attribute, :allow_destroy => true
 		has_many :sentence_symboles, :class_name => "SentenceSymbole", :foreign_key => "symbole_id"
+    has_many :favorites, as: :favoritable
 	## relations ###############
-	
+
+
+  ## uploaders Cloudinary #############
+      mount_uploader :upload, ImageUploader
+      mount_uploader :sound, SoundUploader
+  ## uploaders Cloudinary #############
+
 
 	## scopes ##################
-		## languages 
+		## languages
 			scope :jp, -> { where(lang: 'Japonais')}
 
-		## types 
+		## types
 			scope :kanas , -> { where(symbole_type: 'kana')}
 			scope :kanjis , -> { where(symbole_type: 'kanji')}
 	## scopes ##################
@@ -28,13 +35,11 @@ class Symbole < ActiveRecord::Base
 	  	validates :lang, :symbole_type, :presence => true
   	## validations #############
 
-
   	## validate methods ########
 		def check_specific_attributes
 			errors.add(:base, "Informations manquantes") unless specific_attributes.present?
 		end
 	## validate methods ########
-
 
   	## accessors ###############
 	  	def hiragana_value
@@ -68,6 +73,13 @@ class Symbole < ActiveRecord::Base
 			end
 		end
 	## accessors ###############
+
+
+  ## favorite method ##############
+  def is_faved_by(user)
+    self.favorites.where(user: user).take
+  end
+  ## favorite method ##############
 
 
 end

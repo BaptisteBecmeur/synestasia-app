@@ -4,6 +4,7 @@ class Sentence < ActiveRecord::Base
 
 	## relations ###############
 		has_many :sentence_symboles, :class_name => "SentenceSymbole", :foreign_key => "sentence_id", dependent: :destroy
+    has_many :favorites, as: :favoritable
 	## relations ###############
 
 

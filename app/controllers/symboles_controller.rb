@@ -113,7 +113,7 @@ class SymbolesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def symbole_params
-      params.require(:symbole).permit(:lang, :example_fr, :symbole_type, :css_class, kanji_attribute_attributes: [:value,:concept, :fr],
+      params.require(:symbole).permit(:lang, :example_fr, :symbole_type, :css_class, :sound, :upload, kanji_attribute_attributes: [:value,:concept, :fr],
                                                                                      kana_attribute_attributes: [:hiragana_value,:katakana_value, :fr]
                                                                                      )
     end

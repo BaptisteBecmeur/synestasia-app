@@ -2,19 +2,264 @@
 
 .container-symboles {
   background-color: #f2f2f2;
-  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: relative;
 
   .form-symboles {
     background-color: #fff;
     padding-right: 30px;
     padding-left: 30px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
+    padding-top: 30px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     margin-top: 10px;
     margin-bottom: 10px;
   }
 }
 
+// Title Underlined
+.inset-symbole {
+  font-size: 30px;
+  box-shadow: inset 0 -10px 0 rgba(242, 203, 201, 1);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.save-btn {
+    width: 100%;
+    text-decoration: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
 // Symboles Show
+
+// Card hiragana FRONT
+
+// Front section
+
+.front{
+  border-radius: 6px;
+  background-color: white;
+
+// Favorite as heart
+   .hiragana-fav {
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+    }
+
+// H4 font-size in popover
+
+  h4 {
+    font-size: 30px;
+  }
+
+// Features top FRONT card
+
+     // oeil
+    .card-question {
+      top: 10px;
+      right: 10px;
+      display: inline-block;
+      color: red;
+      position: absolute;
+      // text-shadow: 2px 1px #686868;
+      cursor: pointer;
+    }
+
+     // volume on
+    .audioclick {
+      top: 10px;
+      right: 41px;
+      display: inline-block;
+      color: red;
+      position: absolute;
+      // text-shadow: 2px 1px #686868;
+      cursor: pointer;
+
+      .fa-volume-up {
+        color: red;
+      }
+    }
+
+   // lightbulb
+   .idea {
+      top: 10px;
+      right: 71px;
+      display: inline-block;
+      color: red;
+      position: absolute;
+      // text-shadow: 2px 1px #686868;
+      cursor: pointer;
+    }
+
+     .cursor-stop {
+        cursor: not-allowed
+      }
+
+    // // bubble
+    // .prononciation {
+    //   top: 10px;
+    //   right: 70px;
+    //   display: inline-block;
+    //   color: red;
+    //   position: absolute;
+    //   text-shadow: 2px 2px #686868;
+    //   cursor: pointer;
+    // }
+  }
+
+  // Ajouter un coeur pour favori ??
+
+  .card-hiragana h1 {
+    padding-top:40px;
+    padding-bottom:10px;
+    font-size: 150px;
+
+    h1:hover {
+      color: grey;
+    }
+  }
+
+// hiragana A couleur verte
+    .fr-a {
+      color: black;
+
+    h1:hover {
+      color: $green;
+      cursor: default;
+    }
+  }
+
+  // hiragana E couleur rouge
+    .fr-e {
+      color: black;
+
+    h1:hover {
+      color: $red;
+      cursor: default;
+    }
+  }
+
+// hiragana I couleur orange
+    .fr-i {
+      color: black;
+
+    h1:hover {
+      color: $pink;
+      cursor: default;
+    }
+  }
+
+  // hiragana U couleur violet
+    .fr-u {
+      color: black;
+
+    h1:hover {
+      color: $purple;
+      cursor: default;
+    }
+  }
+
+// hiragana O couleur bleu
+    .fr-o {
+      color: black;
+
+    h1:hover {
+      color: $blue;
+      cursor: default;
+    }
+  }
+
+// card katakana FRONT
+
+  .card-katakana {
+      color: black;
+      font-size: 40px
+    }
+
+// BACK card
+
+  .back {
+
+    h4 {
+      color: white;
+    }
+
+    .backcard-symbole h1 {
+      padding-top:40px;
+      padding-bottom:10px;
+      font-size: 150px;
+      color: white;
+    }
+
+// background A couleur verte
+  .containerbackcards-a {
+    border-radius: 6px;
+    height: 320px;
+    width: 200px;
+    overflow: visible;
+    background-color: $green;
+  }
+
+// background E couleur rouge
+  .containerbackcards-e {
+    position: relative;
+    border-radius: 6px;
+    height: 320px;
+    width: 200px;
+    overflow: visible;
+    background-color: $red;
+  }
+
+// background I couleur orange
+    .containerbackcards-i {
+      position: relative;
+      border-radius: 6px;
+      height: 320px;
+      width: 200px;
+      overflow: visible;
+      background-color: $pink;
+    }
+
+// background U couleur violette
+    .containerbackcards-u {
+      position: relative;
+      border-radius: 6px;
+      height: 320px;
+      width: 200px;
+      overflow: visible;
+      background-color: $purple;
+    }
+
+// background O couleur bleue
+    .containerbackcards-o {
+      position: relative;
+      border-radius: 6px;
+      height: 320px;
+      width: 200px;
+      overflow: visible;
+      background-color: $blue;
+    }
+
+     .card-bigletter {
+      color: white;
+      font-size: 30px
+    }
+  }
+
+.trash-card {
+  position: absolute;
+  top: -8px;
+  left: -6px;
+
+  img {
+    width:20px;
+    height:20px;
+  }
+}
+
+
 

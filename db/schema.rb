@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20160427092021) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "favoritable_id"
+    t.string   "favoritable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "kana_attributes", force: :cascade do |t|
     t.integer  "symbole_id"
     t.string   "hiragana_value"
@@ -92,6 +100,8 @@ ActiveRecord::Schema.define(version: 20160427092021) do
     t.datetime "updated_at",   null: false
     t.string   "symbole_type"
     t.string   "css_class"
+    t.string   "upload"
+    t.string   "sound"
   end
 
   create_table "teacher_requests", force: :cascade do |t|

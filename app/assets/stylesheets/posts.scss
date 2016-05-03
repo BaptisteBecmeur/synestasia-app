@@ -106,16 +106,33 @@
       position: absolute;
       top: -14px;
       left: 15px;
-      background: #F400A1;
+      background: #E5E5E5;
       display: inline-block;
       padding: 0 4px;
       color: white;
+
+    // Color attribute to tag
+    &-japon {
+      background-color: #FE28A2;
     }
+
+    &-chine {
+      background-color: $blue;
+    }
+
+    &-coreen-du-sud {
+      background-color: $orange;
+    }
+
+    &-arabe {
+      background-color: $red;
+    }
+  }
 
     .tags {
       position: absolute;
       top: -14px;
-      left: 74px;
+      left: 80px;
       background: #E22;
       display: inline-block;
       padding: 0 4px;
@@ -245,7 +262,7 @@
       text-transform: capitalise;
       position: absolute;
       top: 10px;
-      left: 79px;
+      left: 85px;
       background: #E22;
       display: inline-block;
       padding: 0 4px;
@@ -295,13 +312,31 @@
       position: absolute;
       top: 10px;
       left: 26px;
-      background: #FE28A2;
+      background: #E5E5E5;
       display: inline-block;
       padding: 0 4px;
       color: white;
-    }
 
-    a { text-decoration: none; }
+  // Color attribute to tag
+  &-japon {
+    background-color: #FE28A2;
+  }
+
+  &-chine {
+    background-color: $blue;
+  }
+
+  &-coreen-du-sud {
+    background-color: $orange;
+  }
+
+  &-arabe {
+    background-color: $red;
+  }
+}
+
+
+  a { text-decoration: none; }
 
     .card-filter-home {
       position: relative;
