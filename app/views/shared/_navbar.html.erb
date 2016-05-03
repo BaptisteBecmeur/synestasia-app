@@ -13,7 +13,7 @@
       <%= link_to "Devenir Teacher", new_teacher_request_path, class: " blog-style separator-navbar" %>
     <% end %>
 
-    <%= link_to t(".top_call_to_action", default: "BLOG"), "#", class: " blog-style separator-navbar" %>
+    <%= link_to t(".top_call_to_action", default: "BLOG"), posts_path, class: " blog-style separator-navbar" %>
 
     <hr class="hidden-xs hidden-sm">
 
@@ -43,6 +43,11 @@
           </div>
         </div>
       <% end %>
+
+      <%= link_to root_path do %>
+        <i class="fa fa-th" aria-hidden="true"></i>
+      <% end %>
+
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag current_user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
