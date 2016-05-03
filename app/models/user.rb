@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   include Authority::UserAbilities
   rolify
 
+  #favoriatble
+  has_many :favorites, dependent: :destroy
 
   # relations
   has_many :posts, dependent: :destroy

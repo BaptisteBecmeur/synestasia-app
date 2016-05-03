@@ -1,0 +1,14 @@
+<% if current_user %>
+  <div class="hiragana-fav">
+    <% if favoritable.is_faved_by(current_user) %>
+      <%= link_to destroy_favorite_path(favoritable_type: favoritable.class.name.capitalize, favoritable_id: favoritable.id), method: "DELETE", remote: true do %>
+        <i class="fa fa-heart faved faved-on" id ="<%=favoritable.id%>"></i>
+      <% end %>
+    <% else %>
+      <%= link_to create_favorite_path(favoritable_type: favoritable.class.name.capitalize, favoritable_id: favoritable.id), method: "POST", remote: true do %>
+        <i class="fa fa-heart faved faved-off" id ="<%=favoritable.id%>"></i>
+      <% end %>
+    <% end  %>
+  </div>
+<% end %>
+
