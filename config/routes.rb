@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :favorites
+
 
   root to: 'pages#home'
 
@@ -28,9 +28,9 @@ Rails.application.routes.draw do
   resources :categories
   resources :posts
 
-  # post 'favs/:hiragana_id', to: 'favs#create', as: "hiragana_favs"
-  # get 'favs', to: 'favs#index'
-  # delete 'favs/:hiragana_id', to: 'favs#destroy'
+  post 'favorites/:favoritable_id', to: 'favorites#create', as: "create_favorite"
+  get 'favorites', to: 'favorites#index'
+  delete 'favorites/:favoritable_id', to: 'favorites#destroy', as: "destroy_favorite"
 
 end
 

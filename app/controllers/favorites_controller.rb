@@ -6,30 +6,53 @@ class FavoritesController < ApplicationController
   def create
     #Favorite.create(user_id: User.last.id, favoritable_id: Symbole.last.id, favoritable_type:"Symbole")
     #@favoritable = find_favoritable
-    @favorite = current_user.favorites.create(favorite_params)
+    case favorite_params[:favoritable_type]
+    when "Symbole"
+      @favoritable = Symbole.find(favorite_params[:favoritable_id])
+    when "User"
+      @favoritable = User.find(favorite_params[:favoritable_id])
+    when "Post"
+      @favoritable = Post.find(favorite_params[:favoritable_id])
+    end
+    if @favoritable.present?
+      @favorite = Favorite.new(favorite_params.merge(user_id: current_user.id))
 
-    if @favorite.save
-      flash[:notice] = "Successfully favorited"
-      redirect_to :id => nil
-    else
-      render :new
+      if @favorite.save
+        flash[:notice] = "Successfully favorited"
+      end
     end
 
     respond_to do |format|
-      format.js { render :ajax_update_favorites }
+        format.js { render :ajax_update_favorites }
     end
+
   end
 
-
   def destroy
-    @favorite = Favorite.find(params[:id])
-    @favorite.destroy
-    redirect_to :back
+    case favorite_params[:favoritable_type]
+    when "Symbole"
+      @favoritable = Symbole.find(favorite_params[:favoritable_id])
+    when "User"
+      @favoritable = User.find(favorite_params[:favoritable_id])
+    when "Post"
+      @favoritable = Post.find(favorite_params[:favoritable_id])
+    end
+    if @favoritable.present?
+      @favorite = Favorite.where(favorite_params.merge(user_id: current_user.id))
+
+      if @favorite.destroy_all
+        flash[:notice] = "Successfully unfavorited"
+      end
+    end
+
+    respond_to do |format|
+        format.js { render :ajax_update_favorites }
+    end
   end
 
   private
 
   def favorite_params
-    params.require(:favorite).permit(:favorite_type, :favorite_id)
+    params.permit(:favoritable_type, :favoritable_id)
   end
 end

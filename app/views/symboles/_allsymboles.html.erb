@@ -47,11 +47,10 @@
               <p><%= symbole.hiragana_value  %></p>
             </div>
 
-            <!-- </div> Favorites -->
+            <!-- Favorites -->
             <div id="favorite_<%=symbole.id%>">
-              <%= render 'favorites/favorites', symbole: symbole %>
+              <%= render 'favorites/favorites', favoritable: symbole %>
             </div>
-
             <!-- Favorites -->
 
             </div>
