@@ -11,3 +11,14 @@ if User.with_role(:admin).empty?
 	admin = User.create!(email: "admin@synestasia.com", password: "aisatsenys", first_name:"admin", last_name: "admin")
 	admin.add_role :admin
 end
+
+
+# rake db:seed fake_users=yes
+if ENV["fake_users"]
+	10.times do |i|
+		id = i.to_s
+		user = User.create!(email: "fake_"+id+"@synestasia.com", password: "12345678", first_name:"user"+id, last_name: "test")
+		teacher = User.create!(email: "fake_teacher_"+id+"@synestasia.com", password: "12345678", first_name:"teacher"+id, last_name: "test")
+		teacher.add_role :teacher
+	end
+end

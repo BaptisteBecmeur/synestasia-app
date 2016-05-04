@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'teachers/index'
+
   root to: 'pages#home'
 
   get 'synestesie', to: 'pages#synestesie'
@@ -37,6 +39,12 @@ Rails.application.routes.draw do
   post 'favorites/:favoritable_id', to: 'favorites#create', as: "create_favorite"
   get 'favorites', to: 'favorites#index'
   delete 'favorites/:favoritable_id', to: 'favorites#destroy', as: "destroy_favorite"
+
+  resources :teachers
+  resources :conversations do
+    resources :messages
+  end
+  
 
 end
 

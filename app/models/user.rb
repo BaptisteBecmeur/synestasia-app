@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   # relations
   has_many :posts, dependent: :destroy
   has_many :teacher_requests
+  has_many :conversations, foreign_key: :sender_id
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -32,6 +33,10 @@ class User < ActiveRecord::Base
 
   def last_teacher_request
     teacher_requests.try(:last)
+  end
+
+  def username
+    ((first_name.present? and last_name.present?) ? (first_name.capitalize + " " + last_name.capitalize.first + ".") : "Anonyme")
   end
 
 end

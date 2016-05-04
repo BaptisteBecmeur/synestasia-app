@@ -62,7 +62,16 @@
             </li>
 
             <!-- Add new fields User -->
-
+            <li>
+               <%= link_to conversations_path do %>
+                <i class="fa fa-envelope"></i> <%= t ".messages", default: "Messages" %>
+              <% end %>
+            </li>
+            <li>
+               <%= link_to teachers_path do %>
+                <i class="fa fa-graduation-cap"></i> <%= t ".teachers", default: "Teachers" %>
+              <% end %>
+            </li>
             <li>
                <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Editer mon profil" %>
