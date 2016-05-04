@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My messages</h1>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Action(s)</th>
+    </tr>
+  </thead>
+  <% current_user_conversations.each do |c| %>
+    <% user = ((c.sender == current_user) ? c.recipient : c.sender) %>
+    <tr>
+      <td><%= user.username %></td>
+      <td>
+        <%= link_to "View", "#", class: "btn btn-success btn-xs start-conversation", data: {sid: current_user.id, rip: user.id} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
