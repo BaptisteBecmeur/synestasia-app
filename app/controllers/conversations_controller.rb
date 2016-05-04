@@ -4,8 +4,6 @@ class ConversationsController < ApplicationController
   layout false
 
   def index
-    
-    @conversations = current_user.conversations.includes(:messages).order("messages.created_at DESC")
     render layout: 'application'
   end
 
