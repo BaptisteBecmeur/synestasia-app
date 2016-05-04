@@ -2,3 +2,23 @@
 @import "footer";
 @import "navbar";
 //@import "breadcrumb";
+
+html{
+  position:relative; 
+  min-height: 100%;
+}
+/*Normalize html and body elements,this style is just good to have*/
+html,body{
+  margin:0;
+  padding:0;
+}
+.pageContentWrapper{
+  margin-bottom:250px;/* Height of footer */
+}
+
+@media only screen and (min-width : 768px){
+	.pageContentWrapper{
+	  margin-bottom:120px;/* Height of footer*/
+	}
+ 
+	}

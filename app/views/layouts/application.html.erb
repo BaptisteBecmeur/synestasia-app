@@ -14,13 +14,14 @@
   <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
 </head>
 <body>
-  <%= render 'shared/navbar' %>
-  <div class="flashes">
-      <%= render 'shared/flashes' %>
-    </div>
+  <div class="pageContentWrapper">
+    <%= render 'shared/navbar' %>
+    <div class="flashes">
+        <%= render 'shared/flashes' %>
+      </div>
 
-  <%= yield %>
-
+    <%= yield %>
+  </div>
   <%= render 'shared/footer' %>
 
   <!-- jquery flipcard -->
