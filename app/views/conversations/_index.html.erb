@@ -1,0 +1,17 @@
+<table class="table right-panel-conversations col-md-2">
+  <thead>
+    <tr>
+      <th>Messages</th>
+    </tr>
+  </thead>
+  <% current_user_conversations.each do |c| %>
+    <% user = ((c.sender == current_user) ? c.recipient : c.sender) %>
+    <tr>
+      <td>
+        <%= link_to user.username, "#", class: "start-conversation", data: {sid: current_user.id, rip: user.id} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+
