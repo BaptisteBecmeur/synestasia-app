@@ -14,5 +14,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap/popover
 //= require jquery_ujs
+//= require chat
+//= require private_pub
 //= require_tree .
 
