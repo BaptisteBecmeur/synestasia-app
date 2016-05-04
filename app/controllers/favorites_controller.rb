@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-     @favorites = Favorite.where(user: current_user)
+    @favorites = Favorite.where(user: current_user)
   end
 
   def create
@@ -13,12 +13,14 @@ class FavoritesController < ApplicationController
       @favoritable = User.find(favorite_params[:favoritable_id])
     when "Post"
       @favoritable = Post.find(favorite_params[:favoritable_id])
+    when "Sentence"
+      @favoritable = Sentence.find(favorite_params[:favoritable_id])
     end
     if @favoritable.present?
       @favorite = Favorite.new(favorite_params.merge(user_id: current_user.id))
 
-      if @favorite.save
-        flash[:notice] = "Successfully favorited"
+    if @favorite.save
+        #flash[:notice] = "Successfully favorited"
       end
     end
 
@@ -36,12 +38,14 @@ class FavoritesController < ApplicationController
       @favoritable = User.find(favorite_params[:favoritable_id])
     when "Post"
       @favoritable = Post.find(favorite_params[:favoritable_id])
+    when "Sentence"
+      @favoritable = Sentence.find(favorite_params[:favoritable_id])
     end
     if @favoritable.present?
       @favorite = Favorite.where(favorite_params.merge(user_id: current_user.id))
 
       if @favorite.destroy_all
-        flash[:notice] = "Successfully unfavorited"
+        #flash[:notice] = "Successfully unfavorited"
       end
     end
 
