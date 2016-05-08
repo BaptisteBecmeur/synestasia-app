@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :posts
 
+
   post 'favorites/:favoritable_id', to: 'favorites#create', as: "create_favorite"
   get 'favorites', to: 'favorites#index'
   delete 'favorites/:favoritable_id', to: 'favorites#destroy', as: "destroy_favorite"

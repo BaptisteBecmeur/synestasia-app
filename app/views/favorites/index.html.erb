@@ -17,14 +17,22 @@
             <li>
               <div class="card">
                 <div class="front">
+
+
+                  <%= link_to "Supprimer", destroy_favorite_path(favorite), :data => {:confirm => 'Are you sure?'}%>
+
+
+                  <span class="card-question popover-word">
+                    <i class="fa fa-eye fa-lg"></i>
+                  </span>
                   <!-- son de l'hiragana -->
                   <div class="audioclick">
                     <% if favorite.favoritable.sound.blank? %>
                       <i class="fa fa-volume-up fa-lg cursor-stop"></i>
                     <% else %>
-                      <a onclick="h=function(event) { event.preventDefault(); $('#audio_<%= fav.hiragana.id%>')[0].play();}; h(event)"><i class="fa fa-volume-up fa-lg"></i></a>
-                    <audio id="audio_<%= fav.hiragana.id%>">
-                      <source src="<%= fav.hiragana.sound%>" type="audio/mp3">
+                      <a onclick="h=function(event) { event.preventDefault(); $('#audio_<%= favorite.favoritable.id%>')[0].play();}; h(event)"><i class="fa fa-volume-up fa-lg"></i></a>
+                    <audio id="audio_<%= favorite.favoritable.id%>">
+                    <source src="<%=favorite.favoritable.sound%>" type="audio/mp3">
                       Your browser does not support the video tag.
                     </audio>
                     <% end %>
@@ -67,9 +75,6 @@
             </li>
           <% end %>
         </ul>
-
-
-
       </div>
     </div>
   </div>
