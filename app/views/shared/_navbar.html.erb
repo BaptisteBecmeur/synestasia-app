@@ -10,10 +10,10 @@
     <div class="navbar-wagon-pusher"></div>
 
     <% if user_signed_in? and current_user.can_create?(TeacherRequest) %>
-      <%= link_to "Devenir Teacher", new_teacher_request_path, class: " blog-style separator-navbar" %>
+      <%= link_to "Devenir Teacher", new_teacher_request_path, class: " blog-style teacherpath-navbar btn btn-default" %>
     <% end %>
 
-    <%= link_to t(".top_call_to_action", default: "BLOG"), posts_path, class: " blog-style separator-navbar" %>
+    <%= link_to t(".top_call_to_action", default: "BLOG"), posts_path, class: " blog-style blogpath-navbar" %>
 
     <hr class="hidden-xs hidden-sm">
 
@@ -44,10 +44,6 @@
         </div>
       <% end %>
 
-      <%= link_to root_path do %>
-        <i class="fa fa-th" aria-hidden="true"></i>
-      <% end %>
-
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag current_user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
@@ -62,6 +58,12 @@
             </li>
 
             <!-- Add new fields User -->
+
+            <li>
+              <%= link_to favorites_path do %>
+                <i class="fa fa-heart" aria-hidden="true"></i> <%= t ".profile", default: "Favoris" %>
+              <% end %>
+            </li>
 
             <li>
                <%= link_to edit_user_registration_path do %>

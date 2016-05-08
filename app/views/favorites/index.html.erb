@@ -1,2 +1,76 @@
-<h1>Favorites#index</h1>
-<p>Find me in app/views/favorites/index.html.erb</p>
+<!-- <h1>Favorites#index</h1>
+<p>Find me in app/views/favorites/index.html.erb</p> -->
+
+<div class="container-page">
+  <div class="padding-page">
+    <div class="container-fluid">
+      <div class="row">
+        <h2 class="text-center"><span class="inset-favs">Favoris</span></h2>
+        <div class="text-center">
+        <%= link_to symboles_path do %>
+          <p class="color-link"><i class="fa fa-arrow-left"></i> Retourner vers le tableau</p>
+          <% end %>
+        </div>
+
+        <% @favorites.each do |favorite| %>
+         <ul class="list-inline text-center card-frame">
+            <li>
+              <div class="card">
+                <div class="front">
+                  <!-- son de l'hiragana -->
+                  <div class="audioclick">
+                    <% if favorite.favoritable.sound.blank? %>
+                      <i class="fa fa-volume-up fa-lg cursor-stop"></i>
+                    <% else %>
+                      <a onclick="h=function(event) { event.preventDefault(); $('#audio_<%= fav.hiragana.id%>')[0].play();}; h(event)"><i class="fa fa-volume-up fa-lg"></i></a>
+                    <audio id="audio_<%= fav.hiragana.id%>">
+                      <source src="<%= fav.hiragana.sound%>" type="audio/mp3">
+                      Your browser does not support the video tag.
+                    </audio>
+                    <% end %>
+                  </div>
+                    <!-- image mnémotechnique -->
+                  <div class="idea">
+                    <% if favorite.favoritable.upload.blank? %>
+                      <i class="fa fa-lightbulb-o fa-lg cursor-stop"></i>
+                    <% else %>
+                      <span class="popover-trigger"
+                        data-toggle="popover"
+                        data-content='<%= cl_image_tag(favorite.favoritable.upload,
+                        :width => 210, :height => 290) %>'>
+                        <i class="fa fa-lightbulb-o fa-lg"></i>
+                      </span>
+                    <% end %>
+                  </div>
+                  <!-- <div class="prononciation">
+                    <i class="fa fa-comment"></i>
+                  </div> -->
+                  <div class="card-hiragana fr-<%=favorite.favoritable.fr.downcase.last%>">
+                    <h1><b><%= favorite.favoritable.hiragana_value  %></b></h1>
+                  </div>
+                  <div class="card-katakana">
+                    <p><%= favorite.favoritable.hiragana_value  %></p>
+                  </div>
+                </div>
+
+                <div class="back">
+                  <div class="col-sm-3 col-xs-4 col-md-3 containerbackcards-<%=favorite.favoritable.fr.downcase.last%>">
+                    <div class="backcard-symbole">
+                      <h1><b><%= favorite.favoritable.hiragana_value  %></b></h1>
+                    </div>
+                    <div class="card-bigletter">
+                      <p><%= favorite.favoritable.fr  %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

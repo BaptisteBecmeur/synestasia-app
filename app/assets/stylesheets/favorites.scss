@@ -1,3 +1,22 @@
 // Place all the styles related to the favorites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.inset-favs {
+  font-size: 30px;
+  box-shadow: inset 0 -10px 0 rgba(255, 242, 0, 1);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.trash-fav {
+  position: absolute;
+  top: -8px;
+  left: -6px;
+
+  img {
+    width:20px;
+    height:20px;
+  }
+
+}
