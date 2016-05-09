@@ -8,7 +8,7 @@
         <h2 class="text-center"><span class="inset-favs">Favoris</span></h2>
         <div class="text-center">
         <%= link_to symboles_path do %>
-          <p class="color-link"><i class="fa fa-arrow-left"></i> Retourner vers le tableau</p>
+          <p class="favorites-link"><i class="fa fa-arrow-left"></i> Retourner vers le tableau</p>
           <% end %>
         </div>
 
@@ -69,9 +69,12 @@
                 </div>
               </div>
             </li>
-             <%= link_to "Supprimer", destroy_favorite_path(favoritable_type: favorite.favoritable.class.name.capitalize, favoritable_id: favorite.favoritable.id),method: "DELETE", :data => {:confirm => 'Are you sure?'}%>
-          <% end %>
+
         </ul>
+        <div class="text-center">
+        <%= link_to "Supprimer", destroy_favorite_path(favoritable_type: favorite.favoritable.class.name.capitalize, favoritable_id: favorite.favoritable.id),method: "DELETE", :data => {:confirm => 'Are you sure?'}%>
+        </div>
+          <% end %>
       </div>
     </div>
   </div>

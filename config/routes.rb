@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
 
 
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/edit'
+
+  get 'users/create'
+
+  get 'users/new'
+
+  get 'users/update'
+
+  get 'users/destroy'
+
   root to: 'pages#home'
 
   get 'synestesie', to: 'pages#synestesie'
