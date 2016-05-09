@@ -51,6 +51,7 @@ class FavoritesController < ApplicationController
 
     respond_to do |format|
         format.js { render :ajax_update_favorites }
+        format.html { redirect_to favorites_path }
     end
   end
 

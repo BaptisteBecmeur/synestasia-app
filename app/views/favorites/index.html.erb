@@ -18,10 +18,6 @@
               <div class="card">
                 <div class="front">
 
-
-                  <%= link_to "Supprimer", destroy_favorite_path(favorite), :data => {:confirm => 'Are you sure?'}%>
-
-
                   <span class="card-question popover-word">
                     <i class="fa fa-eye fa-lg"></i>
                   </span>
@@ -73,6 +69,7 @@
                 </div>
               </div>
             </li>
+             <%= link_to "Supprimer", destroy_favorite_path(favoritable_type: favorite.favoritable.class.name.capitalize, favoritable_id: favorite.favoritable.id),method: "DELETE", :data => {:confirm => 'Are you sure?'}%>
           <% end %>
         </ul>
       </div>
