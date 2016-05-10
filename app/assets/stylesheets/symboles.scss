@@ -67,7 +67,19 @@
       position: absolute;
       // text-shadow: 2px 1px #686868;
       cursor: pointer;
+}
+
+    //hover
+    .card-question:hover {
+      top: 20px;
+      right: 10px;
+      display: inline-block;
+      color: red;
+      position: absolute;
+      // text-shadow: 2px 1px #686868;
+      cursor: pointer;
     }
+
 
      // volume on
     .audioclick {
