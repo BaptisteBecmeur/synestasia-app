@@ -12,7 +12,7 @@ class SentencesController < ApplicationController
   # GET sentences/japonais/kanas
   # GET sentences/japonais/kanjis
   def japonais
-    @sentences = Sentence.jp 
+    @sentences = Sentence.jp
     render "index"
   end
 
@@ -35,7 +35,7 @@ class SentencesController < ApplicationController
   def create
     @sentence = Sentence.new()
     @sentence.lang = sentence_params[:lang]
-    
+
     respond_to do |format|
       if @sentence.save
       	sentence_params[:hash_symbole_ids].each do |key, value|
@@ -110,6 +110,5 @@ class SentencesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def sentence_params
       params.require(:sentence)
-                                                                                     
     end
 end
