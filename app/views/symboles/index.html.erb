@@ -46,7 +46,18 @@
     </table>
 
     <br> -->
-
-    <%= link_to 'New Symbole', new_symbole_path %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <ul class="list-unstyled list-inline text-center">
+          <li>
+            <%= link_to new_symbole_path do %>
+              <div class="black-button iteration-separator">
+                <h5>Create a new symbole</h5>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

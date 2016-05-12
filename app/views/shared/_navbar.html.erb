@@ -42,6 +42,30 @@
             </ul>
           </div>
         </div>
+        <% else current_user.has_role? :teacher %>
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <span class="dropdown" data-toggle="dropdown">Teacher</span>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+
+              <li>
+                <%= link_to '#' do %>
+                  <i class="fa fa-user"></i> <%= t ".teacher_requests", default: "Teacher Requests" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-user"></i> etc...
+                <% end %>
+              </li>
+              <!--<li>
+                <%#= link_to users_path do %>
+                  <i class="fa fa-user"></i> <%#= t ".users", default: "Users" %>
+                <%# end %>
+              </li>-->
+            </ul>
+          </div>
+        </div>
       <% end %>
 
       <div class="navbar-wagon-item">
