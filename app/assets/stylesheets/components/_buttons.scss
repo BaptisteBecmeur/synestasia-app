@@ -256,7 +256,7 @@ h5 {
    -moz-border-radius: 6px;
    border-radius: 6px;
    color: #fff;
-   font-family: Arial, sans-serif;
+   // font-family: 'Open-sans', sans-serif;
    text-decoration: none;
    font-size: 0.9em;
    letter-spacing: 0.1em;
@@ -277,6 +277,10 @@ h5 {
     -webkit-transition: .4s; /* Safari and Chrome */
     -o-transition: .4s; /* Opera */
     opacity: 0.8;
+  }
+
+  h5 {
+    font-family: 'Open sans';
   }
 }
 

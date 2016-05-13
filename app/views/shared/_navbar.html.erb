@@ -10,10 +10,10 @@
     <div class="navbar-wagon-pusher"></div>
 
     <% if user_signed_in? and current_user.can_create?(TeacherRequest) %>
-      <%= link_to "Devenir Teacher", new_teacher_request_path, class: " blog-style separator-navbar" %>
+      <%= link_to "Devenir Teacher", new_teacher_request_path, class: " blog-style teacherpath-navbar btn btn-default" %>
     <% end %>
 
-    <%= link_to t(".top_call_to_action", default: "BLOG"), posts_path, class: " blog-style separator-navbar" %>
+    <%= link_to t(".top_call_to_action", default: "BLOG"), posts_path, class: " blog-style blogpath-navbar" %>
 
     <hr class="hidden-xs hidden-sm">
 
@@ -44,8 +44,30 @@
         </div>
       <% end %>
 
-      <%= link_to root_path do %>
-        <i class="fa fa-th" aria-hidden="true"></i>
+        <% if current_user.has_role? :teacher %>
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <span class="dropdown" data-toggle="dropdown"><i class="fa fa-envelope-o fa-lg teacher-badge"></i></span>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+
+              <li>
+                <%= link_to '#' do %>
+                  <i class="fa fa-user"></i> <%= t ".teacher_requests", default: "Teacher Requests" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                  <i class="fa fa-user"></i> etc...
+                <% end %>
+              </li>
+              <!--<li>
+                <%#= link_to users_path do %>
+                  <i class="fa fa-user"></i> <%#= t ".users", default: "Users" %>
+                <%# end %>
+              </li>-->
+            </ul>
+          </div>
+        </div>
       <% end %>
 
       <div class="navbar-wagon-item">
@@ -72,6 +94,12 @@
                 <i class="fa fa-graduation-cap"></i> <%= t ".teachers", default: "Teachers" %>
               <% end %>
             </li>
+            <li>
+              <%= link_to favorites_path do %>
+                <i class="fa fa-heart" aria-hidden="true"></i> <%= t ".profile", default: "Favoris" %>
+              <% end %>
+            </li>
+
             <li>
                <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Editer mon profil" %>

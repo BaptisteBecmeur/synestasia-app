@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  authorize_actions_for Category
+
   before_filter :authenticate_user!, except: [:index, :show]
   before_action :find_category, only: [:show, :edit, :update, :destroy]
 

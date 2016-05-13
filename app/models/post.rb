@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
-  belongs_to :user
+  include Authority::Abilities
 
+  belongs_to :user
   belongs_to :category
 
   TAGS = ["Design", "Mode", "Tendance", "Life-Style", "Tradition", "Gastronomie", "Insolite", "Technologie"]

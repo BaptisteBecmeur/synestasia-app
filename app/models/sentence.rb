@@ -19,4 +19,10 @@ class Sentence < ActiveRecord::Base
 	  	end
 	## accessors ###############
 
+  ## favorite method ##############
+      def is_faved_by(user)
+        self.favorites.where(user: user).take
+      end
+  ## favorite method ##############
+
 end

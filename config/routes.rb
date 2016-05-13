@@ -4,6 +4,22 @@ Rails.application.routes.draw do
 
   get 'teachers/index'
 
+
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/edit'
+
+  get 'users/create'
+
+  get 'users/new'
+
+  get 'users/update'
+
+  get 'users/destroy'
+
+
   root to: 'pages#home'
 
   get 'synestesie', to: 'pages#synestesie'
@@ -26,7 +42,7 @@ Rails.application.routes.draw do
     post 'load_select_tag' , on: :collection
   end
 
-  resources :teacher_requests do 
+  resources :teacher_requests do
     get 'validate', to: "teacher_requests#validate_teacher_request"
     get 'refuse', to: "teacher_requests#refuse_teacher_request"
     get 'cancel', to: "teacher_requests#cancel_teacher_request"
@@ -36,6 +52,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :posts
 
+
   post 'favorites/:favoritable_id', to: 'favorites#create', as: "create_favorite"
   get 'favorites', to: 'favorites#index'
   delete 'favorites/:favoritable_id', to: 'favorites#destroy', as: "destroy_favorite"
@@ -44,7 +61,7 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
-  
+
 
 end
 
