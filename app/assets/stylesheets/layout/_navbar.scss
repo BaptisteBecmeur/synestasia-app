@@ -49,16 +49,22 @@ a:link a:visited a:hover a:focus {
 }
 
 // Navbar
-
 .header-logo img {
   width: 90px;
   margin-top: 15px;
 }
-
-.separator-navbar {
+// button style navbar
+.blogpath-navbar {
   padding: 10px;
   font-weight: 300;
   font-size: 18px;
+  color: #000;
+}
+
+// Button Navbar Teacher Path
+.teacherpath-navbar {
+  font-weight: 300;
+  margin-right: 10px;
 }
 
 .navbar-wagon {

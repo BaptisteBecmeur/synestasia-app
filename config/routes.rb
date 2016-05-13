@@ -1,7 +1,23 @@
 Rails.application.routes.draw do
 
 
+
   get 'teachers/index'
+
+
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/edit'
+
+  get 'users/create'
+
+  get 'users/new'
+
+  get 'users/update'
+
+  get 'users/destroy'
 
 
   root to: 'pages#home'
@@ -35,6 +51,7 @@ Rails.application.routes.draw do
   # Posts as articles from blog
   resources :categories
   resources :posts
+
 
   post 'favorites/:favoritable_id', to: 'favorites#create', as: "create_favorite"
   get 'favorites', to: 'favorites#index'
