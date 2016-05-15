@@ -2,7 +2,7 @@
   </div>
 
   <div class="card-details">
-  <% if @user == current_user %>
+  <% if post.user == current_user %>
       <%= link_to post_path(post), class:'trash-article', data: { confirm: 'Are you sure?' }, method: :delete do %>
       <%= image_tag("delete-btn.png") %>
     <% end %>

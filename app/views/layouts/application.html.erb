@@ -89,14 +89,16 @@
 </head>
 <body>
   <%= render 'shared/navbar' %>
-  <div class="pageContentWrapper main-panel <%=  current_user.present? ? 'col-md-10' : 'col-md-12' %>">
+  <% #show_conversations = false %>
+  <% show_conversations = (current_user.present? and (([request.original_fullpath]&[root_path, conversations_path]).empty? )) %>
+  <div class="pageContentWrapper main-panel <%=  show_conversations ? 'col-md-10' : 'col-md-12' %>">
     <div class="flashes">
         <%= render 'shared/flashes' %>
       </div>
 
     <%= yield %>
   </div>
-  <% if current_user.present? %>
+  <% if show_conversations %>
     <div class="pageContentWrapper right-panel hidden-sm  col-md-2">
       <%= render 'conversations/index' %>
     </div>
